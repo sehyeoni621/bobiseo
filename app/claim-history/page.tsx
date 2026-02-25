@@ -39,17 +39,17 @@ export default function ClaimHistoryPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Summary cards */}
-        <div className="px-7 pt-6 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
           <div className="grid grid-cols-2 gap-3">
             <div className="rounded-[16px] p-5" style={{ background: "var(--bg-secondary)" }}>
               <p className="text-[12px] mb-1.5" style={{ color: "var(--text-muted)" }}>총 수령액</p>
-              <p className="text-[20px] font-extrabold" style={{ color: "var(--accent-green)" }}>
+              <p className="text-[16px] font-extrabold" style={{ color: "var(--accent-green)" }}>
                 {totalPaid.toLocaleString("ko-KR")}원
               </p>
             </div>
             <div className="rounded-[16px] p-5" style={{ background: "var(--bg-secondary)" }}>
               <p className="text-[12px] mb-1.5" style={{ color: "var(--text-muted)" }}>진행중</p>
-              <p className="text-[20px] font-extrabold" style={{ color: "var(--accent-blue)" }}>
+              <p className="text-[16px] font-extrabold" style={{ color: "var(--accent-blue)" }}>
                 {pendingCount}건
               </p>
             </div>
@@ -59,7 +59,7 @@ export default function ClaimHistoryPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Filter tabs */}
-        <div className="px-7 pt-5 pb-3" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-3" style={{ background: "var(--bg-primary)" }}>
           <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
             {filterOptions.map((opt) => {
               const isActive = filter === opt.value;
@@ -81,10 +81,10 @@ export default function ClaimHistoryPage() {
         </div>
 
         {/* Claim list */}
-        <div className="px-7 py-4" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-4" style={{ background: "var(--bg-primary)" }}>
           {filtered.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-[15px]" style={{ color: "var(--text-muted)" }}>해당 상태의 청구 건이 없습니다</p>
+              <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>해당 상태의 청구 건이 없습니다</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -147,7 +147,7 @@ function ClaimCard({
           </p>
         </div>
         <div className="text-right flex-shrink-0">
-          <p className="text-[15px] font-bold" style={{ color: claim.status === "paid" ? "var(--accent-green)" : "var(--text-primary)" }}>
+          <p className="text-[13px] font-bold" style={{ color: claim.status === "paid" ? "var(--accent-green)" : "var(--text-primary)" }}>
             {claim.amount.toLocaleString("ko-KR")}원
           </p>
         </div>

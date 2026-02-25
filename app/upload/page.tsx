@@ -236,17 +236,17 @@ export default function UploadPage() {
 
       <div className="animate-slide-in">
         {/* Method cards */}
-        <div className="px-8 pt-7 pb-5" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[19px] mb-8" style={{ color: "var(--text-secondary)" }}>
+        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[15px] mb-5" style={{ color: "var(--text-secondary)" }}>
             보험증권을 업로드하면 AI가 자동으로 분석합니다
           </p>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {methods.map((m) => (
               <button
                 key={m.key}
                 onClick={m.onClick}
-                className="w-full flex items-center gap-6 p-7 rounded-[24px] transition-all duration-150 active:scale-[0.98] active:opacity-90 text-left"
+                className="w-full flex items-center gap-4 p-5 rounded-[16px] transition-all duration-150 active:scale-[0.98] active:opacity-90 text-left"
                 style={{
                   background: selectedMethod === m.key
                     ? `color-mix(in srgb, ${m.color} 8%, var(--bg-secondary))`
@@ -255,14 +255,14 @@ export default function UploadPage() {
                 }}
               >
                 <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0"
+                  className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ background: `color-mix(in srgb, ${m.color} 10%, transparent)` }}
                 >
                   {m.icon}
                 </div>
                 <div className="flex-1">
-                  <p className="text-[20px] font-semibold" style={{ color: "var(--text-primary)" }}>{m.label}</p>
-                  <p className="text-[16px] mt-1.5" style={{ color: "var(--text-muted)" }}>{m.desc}</p>
+                  <p className="text-[16px] font-semibold" style={{ color: "var(--text-primary)" }}>{m.label}</p>
+                  <p className="text-[13px] mt-1.5" style={{ color: "var(--text-muted)" }}>{m.desc}</p>
                 </div>
                 {selectedMethod === m.key && (
                   <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: m.color }}>
@@ -283,17 +283,17 @@ export default function UploadPage() {
         />
 
         {/* Spacer */}
-        <div className="h-5" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Simulation banner */}
-        <div className="px-8 py-7" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
           <button
             onClick={() => router.push("/simulation")}
-            className="w-full rounded-[24px] p-7 flex items-center gap-6 transition-all duration-150 active:scale-[0.98] active:opacity-90"
+            className="w-full rounded-[16px] p-5 flex items-center gap-4 transition-all duration-150 active:scale-[0.98] active:opacity-90"
             style={{ background: "var(--bg-secondary)" }}
           >
             <div
-              className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0"
+              className="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0"
               style={{ background: "color-mix(in srgb, var(--accent-purple) 10%, transparent)" }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -301,8 +301,8 @@ export default function UploadPage() {
               </svg>
             </div>
             <div className="flex-1 text-left">
-              <p className="text-[18px] font-semibold" style={{ color: "var(--text-primary)" }}>예시 서류로 시뮬레이션 체험</p>
-              <p className="text-[15px] mt-1" style={{ color: "var(--text-muted)" }}>진료비 예시로 청구 금액 확인</p>
+              <p className="text-[15px] font-semibold" style={{ color: "var(--text-primary)" }}>예시 서류로 시뮬레이션 체험</p>
+              <p className="text-[13px] mt-1" style={{ color: "var(--text-muted)" }}>진료비 예시로 청구 금액 확인</p>
             </div>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-disabled)" strokeWidth="2"><polyline points="9 18 15 12 9 6" /></svg>
           </button>
@@ -310,7 +310,7 @@ export default function UploadPage() {
 
         {/* Preview */}
         {previewUrl && (
-          <div className="px-6 pb-4" style={{ background: "var(--bg-primary)" }}>
+          <div className="px-5 pb-4" style={{ background: "var(--bg-primary)" }}>
             <div className="rounded-[14px] overflow-hidden" style={{ background: "var(--bg-secondary)" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={previewUrl} alt="Preview" className="w-full max-h-48 object-contain" />
@@ -320,16 +320,16 @@ export default function UploadPage() {
 
         {/* OCR Progress */}
         {isProcessing && (
-          <div className="px-7 pb-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+          <div className="px-5 pb-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
             <ProgressBar value={ocrProgress} color="blue" height="md" showLabel />
-            <p className="text-[15px] mt-3 text-center" style={{ color: "var(--text-muted)" }}>
+            <p className="text-[13px] mt-3 text-center" style={{ color: "var(--text-muted)" }}>
               텍스트 인식 중...
             </p>
           </div>
         )}
 
         {/* Upload button */}
-        <div className="px-8 pt-8 pb-10" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-10" style={{ background: "var(--bg-primary)" }}>
           <Button
             variant="primary"
             size="lg"

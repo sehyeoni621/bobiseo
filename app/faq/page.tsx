@@ -43,7 +43,7 @@ function FaqAccordion({ item, isOpen, onToggle }: { item: FaqItem; isOpen: boole
 
         <div className="flex-1 min-w-0">
           <p
-            className="text-[15px] font-bold leading-snug"
+            className="text-[13px] font-bold leading-snug"
             style={{ color: "var(--text-primary)" }}
           >
             {item.question}
@@ -136,7 +136,7 @@ export default function FaqPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Search */}
-        <div className="px-7 pt-5 pb-4" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-4" style={{ background: "var(--bg-primary)" }}>
           <div
             className="flex items-center gap-3 px-4 py-3 rounded-[14px]"
             style={{ background: "var(--bg-secondary)" }}
@@ -164,7 +164,7 @@ export default function FaqPage() {
         </div>
 
         {/* Category tabs */}
-        <div className="px-7 pb-4" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pb-4" style={{ background: "var(--bg-primary)" }}>
           <div className="flex gap-2 overflow-x-auto no-scrollbar">
             {allCategories.map((cat) => {
               const isActive = activeTab === cat;
@@ -191,7 +191,7 @@ export default function FaqPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* FAQ list */}
-        <div className="px-7 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
           {filteredFaqs.length > 0 ? (
             <div className="space-y-3">
               {filteredFaqs.map((faq) => (
@@ -209,7 +209,7 @@ export default function FaqPage() {
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
-              <p className="text-[15px] font-bold" style={{ color: "var(--text-muted)" }}>
+              <p className="text-[13px] font-bold" style={{ color: "var(--text-muted)" }}>
                 검색 결과가 없습니다
               </p>
               <p className="text-[13px] mt-1" style={{ color: "var(--text-disabled)" }}>
@@ -221,22 +221,22 @@ export default function FaqPage() {
 
         {/* Contact CTA */}
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
           <div
-            className="rounded-[20px] p-6 text-center"
+            className="rounded-[20px] p-5 text-center"
             style={{ background: "var(--bg-secondary)" }}
           >
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-3">
               <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
             </svg>
-            <p className="text-[15px] font-bold mb-1" style={{ color: "var(--text-primary)" }}>
+            <p className="text-[13px] font-bold mb-1" style={{ color: "var(--text-primary)" }}>
               원하는 답변을 찾지 못하셨나요?
             </p>
             <p className="text-[13px] mb-4" style={{ color: "var(--text-muted)" }}>
               고객센터로 문의해주시면 빠르게 답변드립니다
             </p>
             <button
-              className="px-6 py-2.5 rounded-full text-[14px] font-bold transition-all active:scale-95"
+              className="px-5 py-2.5 rounded-full text-[14px] font-bold transition-all active:scale-95"
               style={{ background: "var(--accent-blue)", color: "#FFFFFF" }}
             >
               1:1 문의하기

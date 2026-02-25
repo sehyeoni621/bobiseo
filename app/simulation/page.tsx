@@ -51,7 +51,7 @@ export default function SimulationPage() {
     return (
       <MobileFrame>
         <div className="flex flex-col items-center justify-center min-h-screen" style={{ background: "var(--bg-primary)" }}>
-          <div className="relative w-12 h-12 mb-6">
+          <div className="relative w-10 h-10 mb-4">
             <div
               className="absolute inset-0 rounded-full animate-spin"
               style={{
@@ -60,8 +60,8 @@ export default function SimulationPage() {
               }}
             />
           </div>
-          <p className="text-[18px] font-bold mb-3" style={{ color: "var(--text-primary)" }}>진료비 내역 분석 중</p>
-          <p className="text-[16px]" style={{ color: "var(--text-muted)" }}>KCD 질병코드 매칭 중...</p>
+          <p className="text-[15px] font-bold mb-3" style={{ color: "var(--text-primary)" }}>진료비 내역 분석 중</p>
+          <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>KCD 질병코드 매칭 중...</p>
         </div>
       </MobileFrame>
     );
@@ -76,10 +76,10 @@ export default function SimulationPage() {
         <Header title="진료비 세부내역서" />
         <div style={{ background: "var(--bg-secondary)" }}>
           {/* Hospital & patient info */}
-          <div className="px-6 py-6 animate-fade-in" style={{ background: "var(--bg-primary)" }}>
-            <div className="flex items-center gap-4 mb-6">
+          <div className="px-5 py-5 animate-fade-in" style={{ background: "var(--bg-primary)" }}>
+            <div className="flex items-center gap-4 mb-4">
               <div
-                className="w-12 h-12 rounded-[16px] flex items-center justify-center"
+                className="w-10 h-10 rounded-[16px] flex items-center justify-center"
                 style={{ background: "color-mix(in srgb, var(--accent-blue) 12%, transparent)" }}
               >
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -87,7 +87,7 @@ export default function SimulationPage() {
                 </svg>
               </div>
               <div>
-                <p className="text-[16px] font-bold" style={{ color: "var(--text-primary)" }}>{result.bill.hospital}</p>
+                <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>{result.bill.hospital}</p>
                 <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>진료일: {result.bill.visitDate}</p>
               </div>
             </div>
@@ -95,11 +95,11 @@ export default function SimulationPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-[16px] p-4" style={{ background: "var(--bg-secondary)" }}>
                 <p className="text-[12px] mb-1.5" style={{ color: "var(--text-muted)" }}>환자명</p>
-                <p className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>{result.bill.patient}</p>
+                <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>{result.bill.patient}</p>
               </div>
               <div className="rounded-[16px] p-4" style={{ background: "var(--bg-secondary)" }}>
                 <p className="text-[12px] mb-1.5" style={{ color: "var(--text-muted)" }}>입원기간</p>
-                <p className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>{result.bill.daysAdmitted}일</p>
+                <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>{result.bill.daysAdmitted}일</p>
               </div>
             </div>
           </div>
@@ -108,8 +108,8 @@ export default function SimulationPage() {
           <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
           {/* KCD codes */}
-          <div className="px-6 py-6 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
-            <p className="text-[18px] font-bold mb-6" style={{ color: "var(--text-primary)" }}>진단명 (KCD 질병코드)</p>
+          <div className="px-5 py-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+            <p className="text-[13px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>진단명 (KCD 질병코드)</p>
             <div className="space-y-3">
               {result.bill.diagnoses.map((d) => (
                 <div
@@ -136,9 +136,9 @@ export default function SimulationPage() {
           <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
           {/* Bill summary */}
-          <div className="px-6 py-6 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+          <div className="px-5 py-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
             <div className="flex justify-between items-center mb-5">
-              <p className="text-[16px] font-bold" style={{ color: "var(--text-primary)" }}>진료비 요약</p>
+              <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>진료비 요약</p>
               <button
                 onClick={() => setShowBillDetail(!showBillDetail)}
                 className="text-[13px] font-semibold px-3.5 py-2 rounded-full active:scale-[0.97] active:opacity-90 transition-all"
@@ -156,7 +156,7 @@ export default function SimulationPage() {
                     {items.map((item, i) => (
                       <div key={i} className="flex justify-between py-2">
                         <span className="text-[13px]" style={{ color: "var(--text-secondary)" }}>{item.description}</span>
-                        <div className="flex gap-5 text-[13px]">
+                        <div className="flex gap-3 text-[13px]">
                           <span style={{ color: "var(--text-muted)" }}>{formatMoney(item.insuranceCovered)}</span>
                           <span className="font-medium" style={{ color: "var(--text-primary)" }}>{formatMoney(item.patientPay)}</span>
                         </div>
@@ -164,7 +164,7 @@ export default function SimulationPage() {
                     ))}
                   </div>
                 ))}
-                <div className="flex justify-end gap-5 text-[12px] pt-2.5" style={{ borderTop: "1px dashed var(--border)" }}>
+                <div className="flex justify-end gap-3 text-[12px] pt-2.5" style={{ borderTop: "1px dashed var(--border)" }}>
                   <span style={{ color: "var(--text-muted)" }}>공단부담</span>
                   <span className="font-medium" style={{ color: "var(--text-primary)" }}>본인부담</span>
                 </div>
@@ -173,23 +173,23 @@ export default function SimulationPage() {
 
             <div className="space-y-4">
               <div className="flex justify-between">
-                <span className="text-[15px]" style={{ color: "var(--text-secondary)" }}>총 진료비</span>
-                <span className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>{formatMoney(result.bill.totalAmount)}원</span>
+                <span className="text-[13px]" style={{ color: "var(--text-secondary)" }}>총 진료비</span>
+                <span className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>{formatMoney(result.bill.totalAmount)}원</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[15px]" style={{ color: "var(--text-secondary)" }}>공단 부담금</span>
-                <span className="text-[15px]" style={{ color: "var(--accent-blue)" }}>-{formatMoney(result.bill.insuranceCovered)}원</span>
+                <span className="text-[13px]" style={{ color: "var(--text-secondary)" }}>공단 부담금</span>
+                <span className="text-[13px]" style={{ color: "var(--accent-blue)" }}>-{formatMoney(result.bill.insuranceCovered)}원</span>
               </div>
               <div className="h-px" style={{ background: "var(--border)" }} />
               <div className="flex justify-between">
-                <span className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>본인 부담금</span>
-                <span className="text-[16px] font-extrabold" style={{ color: "var(--accent-red)" }}>{formatMoney(result.bill.patientTotal)}원</span>
+                <span className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>본인 부담금</span>
+                <span className="text-[13px] font-extrabold" style={{ color: "var(--accent-red)" }}>{formatMoney(result.bill.patientTotal)}원</span>
               </div>
             </div>
           </div>
 
           {/* CTA */}
-          <div className="px-6 pt-6 pb-8" style={{ background: "var(--bg-primary)" }}>
+          <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
             <Button variant="primary" size="lg" fullWidth onClick={() => setStep("result")}>
               보험금 청구 시뮬레이션 시작
             </Button>
@@ -206,15 +206,15 @@ export default function SimulationPage() {
       <Header title="시뮬레이션 결과" />
       <div style={{ background: "var(--bg-secondary)" }}>
         {/* Hero refund card */}
-        <div className="px-7 pt-7 pb-8 animate-scale-in" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-5 animate-scale-in" style={{ background: "var(--bg-primary)" }}>
           <div
-            className="rounded-[24px] p-9 text-center"
+            className="rounded-[16px] p-6 text-center"
             style={{ background: "var(--accent-blue)" }}
           >
-            <p className="text-white/70 text-[16px] mb-2">예상 환급 금액</p>
+            <p className="text-white/70 text-[13px] mb-2">예상 환급 금액</p>
             <p className="text-[40px] font-extrabold text-white tracking-tight mb-4">
               {formatMoney(result.estimatedRefund)}
-              <span className="text-[18px] ml-1">원</span>
+              <span className="text-[15px] ml-1">원</span>
             </p>
             <div
               className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full"
@@ -224,7 +224,7 @@ export default function SimulationPage() {
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                 <polyline points="17 6 23 6 23 12" />
               </svg>
-              <span className="text-white text-[15px] font-bold">
+              <span className="text-white text-[13px] font-bold">
                 {result.refundRate}% 환급
               </span>
             </div>
@@ -235,18 +235,18 @@ export default function SimulationPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Summary stats */}
-        <div className="px-7 py-7 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
           <div className="grid grid-cols-3 gap-4">
             <div className="rounded-[18px] p-5 text-center" style={{ background: "var(--bg-secondary)" }}>
-              <p className="text-[22px] font-extrabold" style={{ color: "var(--accent-red)" }}>{formatMoney(result.patientPaid)}</p>
+              <p className="text-[17px] font-extrabold" style={{ color: "var(--accent-red)" }}>{formatMoney(result.patientPaid)}</p>
               <p className="text-[14px] mt-2" style={{ color: "var(--text-muted)" }}>본인부담금</p>
             </div>
             <div className="rounded-[18px] p-5 text-center" style={{ background: "var(--bg-secondary)" }}>
-              <p className="text-[22px] font-extrabold" style={{ color: "var(--accent-green)" }}>{formatMoney(result.estimatedRefund)}</p>
+              <p className="text-[17px] font-extrabold" style={{ color: "var(--accent-green)" }}>{formatMoney(result.estimatedRefund)}</p>
               <p className="text-[14px] mt-2" style={{ color: "var(--text-muted)" }}>예상환급</p>
             </div>
             <div className="rounded-[18px] p-5 text-center" style={{ background: "var(--bg-secondary)" }}>
-              <p className="text-[22px] font-extrabold" style={{ color: "var(--accent-blue)" }}>{result.matchedClaims.length}</p>
+              <p className="text-[17px] font-extrabold" style={{ color: "var(--accent-blue)" }}>{result.matchedClaims.length}</p>
               <p className="text-[14px] mt-2" style={{ color: "var(--text-muted)" }}>매칭특약</p>
             </div>
           </div>
@@ -256,8 +256,8 @@ export default function SimulationPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Insurer breakdown */}
-        <div className="px-6 py-6 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[16px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>보험사별 예상 환급</p>
+        <div className="px-5 py-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[13px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>보험사별 예상 환급</p>
           <div className="space-y-4">
             {result.insurerBreakdown.map((ins) => {
               const pct = Math.round((ins.amount / result.totalEstimatedClaim) * 100);
@@ -268,8 +268,8 @@ export default function SimulationPage() {
                   style={{ background: "var(--bg-secondary)" }}
                 >
                   <div className="flex justify-between items-center mb-3">
-                    <p className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>{ins.insurer}</p>
-                    <p className="text-[15px] font-extrabold" style={{ color: "var(--accent-blue)" }}>{formatMoney(ins.amount)}원</p>
+                    <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>{ins.insurer}</p>
+                    <p className="text-[13px] font-extrabold" style={{ color: "var(--accent-blue)" }}>{formatMoney(ins.amount)}원</p>
                   </div>
                   <div className="h-2.5 rounded-full overflow-hidden" style={{ background: "var(--border)" }}>
                     <div
@@ -288,8 +288,8 @@ export default function SimulationPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Claim detail list */}
-        <div className="px-6 py-6 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[16px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>매칭된 보험 특약 상세</p>
+        <div className="px-5 py-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[13px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>매칭된 보험 특약 상세</p>
           <div className="space-y-4">
             {result.matchedClaims.map((claim) => (
               <div
@@ -300,9 +300,9 @@ export default function SimulationPage() {
                 <div className="flex justify-between items-start mb-3">
                   <div className="flex-1 min-w-0">
                     <p className="text-[13px] mb-1" style={{ color: "var(--text-muted)" }}>{claim.insurer}</p>
-                    <p className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>{claim.riderName}</p>
+                    <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>{claim.riderName}</p>
                   </div>
-                  <span className="text-[16px] font-extrabold flex-shrink-0 ml-3" style={{ color: "var(--accent-green)" }}>
+                  <span className="text-[13px] font-extrabold flex-shrink-0 ml-3" style={{ color: "var(--accent-green)" }}>
                     +{formatMoney(claim.estimatedAmount)}원
                   </span>
                 </div>
@@ -331,8 +331,8 @@ export default function SimulationPage() {
         </div>
 
         {/* CTA */}
-        <div className="px-6 py-6" style={{ background: "var(--bg-primary)" }}>
-          <div className="space-y-4 pb-8">
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <div className="space-y-4 pb-5">
             <Button variant="primary" size="lg" fullWidth onClick={() => router.push("/claim")}>
               실제 청구 시작하기
             </Button>

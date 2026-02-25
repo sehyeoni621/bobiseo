@@ -13,13 +13,13 @@ export default function MobileFrame({
 }: MobileFrameProps) {
   return (
     <div
-      className="min-h-screen flex justify-center"
+      className="min-h-screen min-h-[100dvh] flex justify-center"
       style={{ background: "var(--bg-tertiary)" }}
     >
       <div
         className={`
-          w-full max-w-[520px] min-h-screen relative
-          ${showNav ? "pb-36" : ""}
+          w-full max-w-[480px] sm:max-w-[520px] min-h-screen min-h-[100dvh] relative
+          ${showNav ? "pb-[88px]" : ""}
           ${className}
         `}
         style={{ background: "var(--bg-secondary)" }}

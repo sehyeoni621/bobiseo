@@ -183,7 +183,7 @@ export default function DocScanPage() {
 
       <div className="animate-slide-in">
         {/* Info badge section */}
-        <div className="px-7 pt-6 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
           <div className="mb-3">
             <Badge variant="blue" icon={
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -201,16 +201,16 @@ export default function DocScanPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Document type selection */}
-        <div className="px-7 pt-6 pb-8" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[17px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>서류 종류 선택</h3>
-          <div className="space-y-4 mb-6">
+        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>서류 종류 선택</h3>
+          <div className="space-y-4 mb-4">
             {docOptions.map((option) => {
               const isSelected = selected === option.type;
               return (
                 <button
                   key={option.type}
                   onClick={() => setSelected(option.type)}
-                  className="w-full flex items-center gap-5 p-5 rounded-[18px] transition-all duration-200 text-left active:scale-[0.98]"
+                  className="w-full flex items-center gap-3 p-5 rounded-[18px] transition-all duration-200 text-left active:scale-[0.98]"
                   style={{
                     background: isSelected
                       ? `color-mix(in srgb, ${option.color} 8%, var(--bg-secondary))`
@@ -226,14 +226,14 @@ export default function DocScanPage() {
                     }}
                   >
                     <span
-                      className="text-[15px] font-extrabold"
+                      className="text-[13px] font-extrabold"
                       style={{ color: isSelected ? option.color : "var(--text-muted)" }}
                     >
                       {option.abbr}
                     </span>
                   </div>
                   <div className="flex-1">
-                    <p className="font-bold text-[15px]" style={{ color: "var(--text-primary)" }}>{option.label}</p>
+                    <p className="font-bold text-[13px]" style={{ color: "var(--text-primary)" }}>{option.label}</p>
                     <p className="text-[13px] mt-0.5" style={{ color: "var(--text-secondary)" }}>{option.description}</p>
                   </div>
                   {isSelected && (

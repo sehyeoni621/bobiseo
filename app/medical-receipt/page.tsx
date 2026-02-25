@@ -59,9 +59,9 @@ export default function MedicalReceiptPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Hospital header - official document style */}
-        <div className="px-6 pt-6 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
           <div className="text-center mb-5">
-            <p className="text-[20px] font-extrabold tracking-wide" style={{ color: "var(--text-primary)" }}>
+            <p className="text-[16px] font-extrabold tracking-wide" style={{ color: "var(--text-primary)" }}>
               세부진료비확인서
             </p>
             <p className="text-[12px] mt-1" style={{ color: "var(--text-muted)" }}>
@@ -83,7 +83,7 @@ export default function MedicalReceiptPage() {
                 </svg>
               </div>
               <div>
-                <p className="text-[16px] font-bold" style={{ color: "var(--text-primary)" }}>
+                <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>
                   {receipt.hospitalName}
                 </p>
                 <p className="text-[12px]" style={{ color: "var(--text-muted)" }}>
@@ -109,8 +109,8 @@ export default function MedicalReceiptPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Diagnosis section */}
-        <div className="px-6 py-5" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[16px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[13px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
             진단명 (KCD 코드)
           </p>
           <div className="space-y-2.5">
@@ -153,9 +153,9 @@ export default function MedicalReceiptPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Detailed bill categories */}
-        <div className="px-6 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
           <div className="flex justify-between items-center mb-4">
-            <p className="text-[16px] font-bold" style={{ color: "var(--text-primary)" }}>
+            <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>
               진료비 세부내역
             </p>
             <button
@@ -281,8 +281,8 @@ export default function MedicalReceiptPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Grand total */}
-        <div className="px-6 py-5" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[16px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[13px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
             진료비 합계
           </p>
 
@@ -302,10 +302,10 @@ export default function MedicalReceiptPage() {
             <div className="h-px" style={{ background: "var(--border)" }} />
 
             <div className="flex justify-between items-center">
-              <span className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>
+              <span className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>
                 본인 납부 총액
               </span>
-              <span className="text-[20px] font-extrabold" style={{ color: "var(--accent-red)" }}>
+              <span className="text-[16px] font-extrabold" style={{ color: "var(--accent-red)" }}>
                 {formatKRW(receipt.grandTotal.patientTotal)}원
               </span>
             </div>
@@ -316,10 +316,10 @@ export default function MedicalReceiptPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Document info & CTA */}
-        <div className="px-6 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
           {/* Receipt metadata */}
           <div
-            className="rounded-[14px] p-4 mb-6"
+            className="rounded-[14px] p-4 mb-4"
             style={{ background: "var(--bg-secondary)" }}
           >
             <div className="grid grid-cols-2 gap-2.5 text-[12px]">
@@ -343,7 +343,7 @@ export default function MedicalReceiptPage() {
           </div>
 
           {/* Action buttons */}
-          <div className="space-y-3 pb-8">
+          <div className="space-y-3 pb-5">
             <Button
               variant="primary"
               size="lg"

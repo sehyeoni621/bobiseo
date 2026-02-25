@@ -18,12 +18,12 @@ export default function ClaimCompletePage() {
   return (
     <MobileFrame>
       <div
-        className="flex flex-col items-center justify-center min-h-screen px-8 animate-fade-in"
+        className="flex flex-col items-center justify-center min-h-screen px-5 animate-fade-in"
         style={{ background: "var(--bg-primary)" }}
       >
         {/* Success icon */}
         <div
-          className="w-[88px] h-[88px] rounded-full flex items-center justify-center mb-7"
+          className="w-[88px] h-[88px] rounded-full flex items-center justify-center mb-5"
           style={{ background: "color-mix(in srgb, var(--accent-green) 12%, var(--bg-secondary))" }}
         >
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -38,22 +38,22 @@ export default function ClaimCompletePage() {
           청구 완료!
         </h1>
         <p
-          className="text-[15px] text-center mb-9"
+          className="text-[13px] text-center mb-4"
           style={{ color: "var(--text-secondary)" }}
         >
           보험사에 청구서가 성공적으로 전송되었습니다
         </p>
 
         {/* Info card */}
-        <Card variant="default" padding="lg" className="w-full mb-9">
-          <div className="space-y-5">
+        <Card variant="default" padding="lg" className="w-full mb-4">
+          <div className="space-y-3">
             {infoRows.map((row, i) => (
               <div key={i}>
                 {i > 0 && <div className="h-px mb-5" style={{ background: "var(--bg-secondary)" }} />}
                 <div className="flex justify-between items-center">
-                  <span className="text-[15px]" style={{ color: "var(--text-secondary)" }}>{row.label}</span>
+                  <span className="text-[13px]" style={{ color: "var(--text-secondary)" }}>{row.label}</span>
                   <span
-                    className={`text-[15px] font-bold ${row.mono ? "font-mono" : ""}`}
+                    className={`text-[13px] font-bold ${row.mono ? "font-mono" : ""}`}
                     style={{ color: row.color }}
                   >
                     {row.value}

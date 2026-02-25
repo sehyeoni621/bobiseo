@@ -69,12 +69,12 @@ export default function OnboardingPage() {
 
   return (
     <MobileFrame>
-      <div className="flex flex-col min-h-screen px-9 py-12" style={{ background: "var(--bg-primary)" }}>
+      <div className="flex flex-col min-h-screen px-6 py-12" style={{ background: "var(--bg-primary)" }}>
         {/* Skip button */}
         <div className="flex justify-end">
           <button
             onClick={handleSkip}
-            className="text-[18px] py-2 px-4 transition-colors active:opacity-70"
+            className="text-[15px] py-2 px-4 transition-colors active:opacity-70"
             style={{ color: "var(--text-muted)" }}
           >
             건너뛰기
@@ -85,7 +85,7 @@ export default function OnboardingPage() {
         <div className="flex-1 flex flex-col items-center justify-center animate-fade-in" key={currentStep}>
           {/* Solid bg icon circle */}
           <div
-            className="w-36 h-36 rounded-full flex items-center justify-center mb-16"
+            className="w-36 h-36 rounded-full flex items-center justify-center mb-10"
             style={{
               background: `color-mix(in srgb, ${step.bgColor} 12%, var(--bg-secondary))`,
             }}
@@ -94,14 +94,14 @@ export default function OnboardingPage() {
           </div>
 
           <h2
-            className="text-[34px] font-extrabold tracking-[-0.02em] text-center mb-7 whitespace-pre-line leading-tight"
+            className="text-[26px] font-extrabold tracking-[-0.02em] text-center mb-5 whitespace-pre-line leading-tight"
             style={{ color: "var(--text-primary)" }}
           >
             {step.title}
           </h2>
 
           <p
-            className="text-[18px] text-center leading-relaxed whitespace-pre-line"
+            className="text-[15px] text-center leading-relaxed whitespace-pre-line"
             style={{ color: "var(--text-secondary)" }}
           >
             {step.description}
@@ -109,7 +109,7 @@ export default function OnboardingPage() {
         </div>
 
         {/* Bottom section */}
-        <div className="space-y-8 pb-6">
+        <div className="space-y-5 pb-5">
           {/* Step indicator dots */}
           <div className="flex justify-center gap-3.5">
             {steps.map((_, i) => (

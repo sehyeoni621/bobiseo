@@ -104,7 +104,7 @@ export default function NotificationsPage() {
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Unread count */}
         {unreadCount > 0 && (
-          <div className="px-7 py-4" style={{ background: "var(--bg-primary)" }}>
+          <div className="px-5 py-4" style={{ background: "var(--bg-primary)" }}>
             <p className="text-[14px]" style={{ color: "var(--text-secondary)" }}>
               읽지 않은 알림 <span className="font-bold" style={{ color: "var(--accent-blue)" }}>{unreadCount}건</span>
             </p>
@@ -121,7 +121,7 @@ export default function NotificationsPage() {
               <div key={noti.id}>
                 <button
                   onClick={() => handleClick(noti)}
-                  className="w-full px-7 py-5 flex items-start gap-4 text-left active:opacity-80 transition-all"
+                  className="w-full px-5 py-5 flex items-start gap-4 text-left active:opacity-80 transition-all"
                   style={{
                     background: noti.read
                       ? "var(--bg-primary)"

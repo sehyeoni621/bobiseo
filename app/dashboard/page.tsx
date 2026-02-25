@@ -28,42 +28,42 @@ export default function DashboardPage() {
       <Header title="숨은 보험금" />
       <div style={{ background: "var(--bg-secondary)" }}>
         {/* Total amount section */}
-        <div className="px-8 py-9 animate-scale-in" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[17px] mb-4" style={{ color: "var(--text-muted)" }}>총 예상 미청구 보험금</p>
-          <div className="flex items-baseline gap-2 mb-7">
-            <span className="text-[46px] font-extrabold tracking-[-0.02em]" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-6 animate-scale-in" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[14px] mb-4" style={{ color: "var(--text-muted)" }}>총 예상 미청구 보험금</p>
+          <div className="flex items-baseline gap-2 mb-5">
+            <span className="text-[32px] font-extrabold tracking-[-0.02em]" style={{ color: "var(--text-primary)" }}>
               {totalUnclaimedAmount.toLocaleString("ko-KR")}
             </span>
-            <span className="text-[20px] font-bold" style={{ color: "var(--text-secondary)" }}>원</span>
+            <span className="text-[16px] font-bold" style={{ color: "var(--text-secondary)" }}>원</span>
           </div>
-          <div className="flex gap-5">
+          <div className="flex gap-3">
             <Badge variant="blue">실손 {lossonAmount.toLocaleString("ko-KR")}원</Badge>
             <Badge variant="purple">정액 {fixedAmount.toLocaleString("ko-KR")}원</Badge>
           </div>
         </div>
 
         {/* Section separator */}
-        <div className="h-5" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Claimable items list */}
-        <div className="px-8 py-8 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[20px] font-bold mb-7" style={{ color: "var(--text-primary)" }}>청구 가능 항목</p>
+        <div className="px-5 py-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[16px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>청구 가능 항목</p>
           <div>
             {claimableItems.map((item, idx) => (
               <div key={item.id}>
                 <button
                   onClick={() => router.push(`/claim/${item.id}`)}
-                  className="w-full flex items-center justify-between py-7 text-left active:scale-[0.97] active:opacity-90 transition-all"
+                  className="w-full flex items-center justify-between py-5 text-left active:scale-[0.97] active:opacity-90 transition-all"
                 >
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-1.5">
-                      <p className="text-[19px] font-bold" style={{ color: "var(--text-primary)" }}>{item.title}</p>
+                      <p className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>{item.title}</p>
                       <StatusBadge status={item.status} />
                     </div>
-                    <p className="text-[16px] mt-1" style={{ color: "var(--text-muted)" }}>{item.insurer}</p>
+                    <p className="text-[13px] mt-1" style={{ color: "var(--text-muted)" }}>{item.insurer}</p>
                   </div>
                   <div className="flex items-center gap-3 flex-shrink-0 ml-3">
-                    <p className="text-[20px] font-bold" style={{ color: "var(--accent-blue)" }}>
+                    <p className="text-[16px] font-bold" style={{ color: "var(--accent-blue)" }}>
                       {item.amount.toLocaleString("ko-KR")}원
                     </p>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2">

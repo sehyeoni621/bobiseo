@@ -66,19 +66,19 @@ export default function ClaimPage() {
 
       <div className="animate-slide-in">
         {/* Step progress */}
-        <div className="px-7 pt-6 pb-8" style={{ background: "var(--bg-primary)" }}>
-          <div className="mb-6">
+        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
+          <div className="mb-4">
             {steps.map((step, i) => {
               const stepNum = i + 1;
               const isDone = stepNum < currentStep;
               const isCurrent = stepNum === currentStep;
 
               return (
-                <div key={i} className="flex gap-5">
+                <div key={i} className="flex gap-3">
                   {/* Step indicator */}
                   <div className="flex flex-col items-center">
                     <div
-                      className="w-9 h-9 rounded-full flex items-center justify-center text-[15px] font-bold transition-all duration-300"
+                      className="w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-bold transition-all duration-300"
                       style={{
                         background: isDone
                           ? "var(--accent-green)"
@@ -105,9 +105,9 @@ export default function ClaimPage() {
                   </div>
 
                   {/* Step content */}
-                  <div className="flex-1 pb-7">
+                  <div className="flex-1 pb-5">
                     <p
-                      className="text-[15px] font-bold"
+                      className="text-[13px] font-bold"
                       style={{
                         color: isCurrent
                           ? "var(--text-primary)"

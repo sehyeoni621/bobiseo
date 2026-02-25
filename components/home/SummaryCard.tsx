@@ -25,33 +25,33 @@ export default function SummaryCard({
 
   return (
     <div
-      className="rounded-[28px] p-9"
+      className="rounded-[20px] p-6"
       style={{ background: "var(--bg-secondary)" }}
     >
-      <p className="text-[17px] font-medium mb-4" style={{ color: "var(--text-muted)" }}>
+      <p className="text-[13px] font-medium mb-2" style={{ color: "var(--text-muted)" }}>
         총 예상 미청구 보험금
       </p>
-      <div className="flex items-baseline gap-2 mb-10">
+      <div className="flex items-baseline gap-1.5 mb-6">
         <span
-          className="text-[48px] font-extrabold tracking-[-0.03em] leading-none animate-count-up"
+          className="text-[32px] sm:text-[36px] font-extrabold tracking-[-0.03em] leading-none animate-count-up"
           style={{ color: "var(--text-primary)" }}
         >
           {formatAmount(totalAmount)}
         </span>
-        <span className="text-[20px] font-bold" style={{ color: "var(--text-muted)" }}>원</span>
+        <span className="text-[16px] font-bold" style={{ color: "var(--text-muted)" }}>원</span>
       </div>
 
-      <div className="flex gap-5">
+      <div className="flex gap-3">
         {stats.map((item, i) => (
           <div
             key={item.label}
-            className={`flex-1 rounded-[20px] py-6 px-5 text-center animate-slide-up stagger-${i + 1}`}
+            className={`flex-1 rounded-[14px] py-4 px-3 text-center animate-slide-up stagger-${i + 1}`}
             style={{ background: "var(--bg-primary)" }}
           >
-            <p className="text-[30px] font-extrabold leading-tight" style={{ color: item.color }}>
+            <p className="text-[22px] font-extrabold leading-tight" style={{ color: item.color }}>
               {item.value}
             </p>
-            <p className="text-[15px] mt-3 font-medium" style={{ color: "var(--text-muted)" }}>
+            <p className="text-[12px] mt-1.5 font-medium" style={{ color: "var(--text-muted)" }}>
               {item.label}
             </p>
           </div>

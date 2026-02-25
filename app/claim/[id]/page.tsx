@@ -34,12 +34,12 @@ export default function ClaimDetailPage() {
 
       <div className="animate-slide-in">
         {/* Disease code info */}
-        <div className="px-7 pt-6 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
           <Card variant="filled" padding="lg">
             <div className="flex items-center gap-4">
               <Badge variant="red">M51.1</Badge>
               <div>
-                <p className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>요추 추간판 탈출증</p>
+                <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>요추 추간판 탈출증</p>
                 <p className="text-[13px]" style={{ color: "var(--text-secondary)" }}>정형외과</p>
               </div>
             </div>
@@ -50,14 +50,14 @@ export default function ClaimDetailPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Coverage matching results */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[17px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>보장 매칭 결과</h3>
-          <div className="space-y-3 mb-7">
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>보장 매칭 결과</h3>
+          <div className="space-y-3 mb-5">
             {mockRiderMatches.map((rider, i) => (
               <Card key={i} padding="md">
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
-                    <p className="text-[15px] font-bold mb-1.5" style={{ color: "var(--text-primary)" }}>{rider.name}</p>
+                    <p className="text-[13px] font-bold mb-1.5" style={{ color: "var(--text-primary)" }}>{rider.name}</p>
                     <div className="flex items-center gap-2">
                       <div className="w-14 h-2 rounded-full overflow-hidden" style={{ background: "var(--bg-secondary)" }}>
                         <div className="h-full rounded-full" style={{ width: `${rider.confidence * 100}%`, background: "var(--accent-green)" }} />
@@ -65,7 +65,7 @@ export default function ClaimDetailPage() {
                       <span className="text-[11px]" style={{ color: "var(--text-secondary)" }}>{Math.round(rider.confidence * 100)}%</span>
                     </div>
                   </div>
-                  <p className="text-[15px] font-bold" style={{ color: "var(--accent-blue)" }}>
+                  <p className="text-[13px] font-bold" style={{ color: "var(--accent-blue)" }}>
                     {rider.amount.toLocaleString("ko-KR")}원
                   </p>
                 </div>
@@ -78,15 +78,15 @@ export default function ClaimDetailPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Total amount */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
-          <Card variant="filled" padding="lg" className="mb-7">
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <Card variant="filled" padding="lg" className="mb-5">
             <div className="text-center">
-              <p className="text-[15px] mb-1.5" style={{ color: "var(--text-secondary)" }}>예상 총 지급액</p>
+              <p className="text-[13px] mb-1.5" style={{ color: "var(--text-secondary)" }}>예상 총 지급액</p>
               <div className="flex items-baseline justify-center gap-1.5">
-                <span className="text-[32px] font-extrabold" style={{ color: "var(--text-primary)" }}>
+                <span className="text-[24px] font-extrabold" style={{ color: "var(--text-primary)" }}>
                   {totalAmount.toLocaleString("ko-KR")}
                 </span>
-                <span className="text-[19px] font-bold" style={{ color: "var(--text-secondary)" }}>원</span>
+                <span className="text-[13px] font-bold" style={{ color: "var(--text-secondary)" }}>원</span>
               </div>
             </div>
           </Card>

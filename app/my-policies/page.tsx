@@ -37,7 +37,7 @@ export default function MyPoliciesPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Summary */}
-        <div className="px-7 pt-6 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
           <div className="grid grid-cols-3 gap-3">
             <StatBox label="등록 증권" value={`${policies.length}건`} color="var(--accent-blue)" />
             <StatBox label="총 특약" value={`${totalRiders}개`} color="var(--accent-purple)" />
@@ -48,8 +48,8 @@ export default function MyPoliciesPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Policy cards */}
-        <div className="px-7 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[17px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
             내 보험 목록
           </h3>
           <div className="space-y-4">
@@ -69,7 +69,7 @@ export default function MyPoliciesPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Add button */}
-        <div className="px-7 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
           <Button
             variant="primary"
             size="lg"
@@ -94,7 +94,7 @@ export default function MyPoliciesPage() {
 function StatBox({ label, value, color }: { label: string; value: string; color: string }) {
   return (
     <div className="rounded-[14px] p-4 text-center" style={{ background: "var(--bg-secondary)" }}>
-      <p className="text-[18px] font-extrabold" style={{ color }}>{value}</p>
+      <p className="text-[15px] font-extrabold" style={{ color }}>{value}</p>
       <p className="text-[12px] mt-1" style={{ color: "var(--text-muted)" }}>{label}</p>
     </div>
   );
@@ -123,7 +123,7 @@ function PolicyCard({
         className="w-full p-5 flex items-center gap-4 text-left active:opacity-80 transition-all"
       >
         <div
-          className="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0"
+          className="w-10 h-10 rounded-[14px] flex items-center justify-center flex-shrink-0"
           style={{ background: `color-mix(in srgb, ${color} 15%, transparent)` }}
         >
           <span className="text-[13px] font-extrabold" style={{ color }}>
@@ -131,7 +131,7 @@ function PolicyCard({
           </span>
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-[15px] font-bold truncate" style={{ color: "var(--text-primary)" }}>
+          <p className="text-[13px] font-bold truncate" style={{ color: "var(--text-primary)" }}>
             {policy.productName}
           </p>
           <p className="text-[13px] mt-0.5" style={{ color: "var(--text-muted)" }}>

@@ -59,38 +59,38 @@ export default function LoginPage() {
   return (
     <MobileFrame>
       <div
-        className="flex flex-col min-h-screen px-9 py-14 animate-fade-in"
+        className="flex flex-col min-h-screen min-h-[100dvh] px-6 py-10 animate-fade-in"
         style={{ background: "var(--bg-primary)" }}
       >
         {/* Logo */}
-        <div className="flex flex-col items-center mt-16 mb-16">
+        <div className="flex flex-col items-center mt-12 mb-10">
           <div
-            className="w-24 h-24 rounded-[24px] flex items-center justify-center mb-7"
-            style={{ background: "var(--accent-blue)" }}
+            className="w-18 h-18 rounded-[20px] flex items-center justify-center mb-5"
+            style={{ background: "var(--accent-blue)", width: 72, height: 72 }}
           >
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
           </div>
           <h1
-            className="text-[36px] font-extrabold tracking-[-0.03em] mb-2"
+            className="text-[28px] font-extrabold tracking-[-0.03em] mb-1"
             style={{ color: "var(--text-primary)" }}
           >
             보비서
           </h1>
-          <p className="text-[18px]" style={{ color: "var(--text-muted)" }}>
+          <p className="text-[15px]" style={{ color: "var(--text-muted)" }}>
             AI 보험금 청구 도우미
           </p>
         </div>
 
         {/* Form */}
-        <div className="space-y-5 mb-8">
+        <div className="space-y-3 mb-6">
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="아이디"
-            className="w-full px-7 py-5 rounded-[18px] text-[18px] outline-none toss-input"
+            className="w-full px-5 py-3.5 rounded-[14px] text-[15px] outline-none toss-input"
             autoComplete="username"
           />
           <input
@@ -98,7 +98,7 @@ export default function LoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="비밀번호"
-            className="w-full px-7 py-5 rounded-[18px] text-[18px] outline-none toss-input"
+            className="w-full px-5 py-3.5 rounded-[14px] text-[15px] outline-none toss-input"
             autoComplete="current-password"
             onKeyDown={(e) => { if (e.key === "Enter") handleLogin(); }}
           />
@@ -115,20 +115,20 @@ export default function LoginPage() {
         </Button>
 
         {/* Divider */}
-        <div className="flex items-center gap-5 my-10">
+        <div className="flex items-center gap-4 my-7">
           <div className="flex-1 h-px" style={{ background: "var(--border)" }} />
-          <span className="text-[15px] font-medium" style={{ color: "var(--text-disabled)" }}>또는</span>
+          <span className="text-[13px] font-medium" style={{ color: "var(--text-disabled)" }}>또는</span>
           <div className="flex-1 h-px" style={{ background: "var(--border)" }} />
         </div>
 
         {/* Social */}
-        <div className="space-y-7">
+        <div className="space-y-3">
           <button
             onClick={() => handleSocialLogin("kakao")}
             disabled={isLoading}
-            className="w-full flex items-center justify-center gap-4 px-8 py-7 min-h-[72px] rounded-[22px] bg-[#FEE500] text-[#191919] font-bold text-[20px] active:scale-[0.97] active:opacity-90 transition-all disabled:opacity-40"
+            className="w-full flex items-center justify-center gap-3 px-6 py-3.5 min-h-[52px] rounded-[16px] bg-[#FEE500] text-[#191919] font-bold text-[15px] active:scale-[0.97] active:opacity-90 transition-all disabled:opacity-40"
           >
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="#191919">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#191919">
               <path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.47 1.607 4.647 4.04 5.907l-1.02 3.72c-.037.135.095.25.218.19l4.326-2.48c.8.12 1.618.183 2.436.183 5.523 0 10-3.477 10-7.52S17.523 3 12 3z" />
             </svg>
             카카오로 시작하기
@@ -137,9 +137,9 @@ export default function LoginPage() {
           <button
             onClick={() => handleSocialLogin("naver")}
             disabled={isLoading}
-            className="w-full flex items-center justify-center gap-4 px-8 py-7 min-h-[72px] rounded-[22px] bg-[#03C75A] text-white font-bold text-[20px] active:scale-[0.97] active:opacity-90 transition-all disabled:opacity-40"
+            className="w-full flex items-center justify-center gap-3 px-6 py-3.5 min-h-[52px] rounded-[16px] bg-[#03C75A] text-white font-bold text-[15px] active:scale-[0.97] active:opacity-90 transition-all disabled:opacity-40"
           >
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
               <path d="M16.273 12.845L7.376 3H3v18h4.727V11.155L16.624 21H21V3h-4.727z" />
             </svg>
             네이버로 시작하기
@@ -147,9 +147,9 @@ export default function LoginPage() {
         </div>
 
         {/* Demo hint */}
-        <div className="mt-auto pt-10">
-          <div className="rounded-[18px] p-5 text-center" style={{ background: "var(--bg-secondary)" }}>
-            <p className="text-[16px]" style={{ color: "var(--text-muted)" }}>
+        <div className="mt-auto pt-8">
+          <div className="rounded-[14px] p-4 text-center" style={{ background: "var(--bg-secondary)" }}>
+            <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>
               체험 계정: bobi123 / 1234
             </p>
           </div>

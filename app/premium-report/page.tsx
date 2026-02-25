@@ -87,7 +87,7 @@ export default function PremiumReportPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* PRO badge + score */}
-        <div className="px-7 pt-6 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
           <div className="flex justify-center mb-5">
             <span
               className="px-5 py-2 rounded-full text-[13px] font-bold tracking-wider"
@@ -99,7 +99,7 @@ export default function PremiumReportPage() {
 
           <Card variant="filled" padding="lg">
             <div className="text-center mb-5">
-              <p className="text-[15px] mb-3" style={{ color: "var(--text-secondary)" }}>보장 충실도 점수</p>
+              <p className="text-[13px] mb-3" style={{ color: "var(--text-secondary)" }}>보장 충실도 점수</p>
               <div className="relative inline-flex items-center justify-center">
                 <svg width="120" height="120" viewBox="0 0 120 120">
                   <circle cx="60" cy="60" r="50" fill="none" stroke="var(--bg-secondary)" strokeWidth="8" />
@@ -112,23 +112,23 @@ export default function PremiumReportPage() {
                   />
                 </svg>
                 <div className="absolute">
-                  <span className="text-[32px] font-extrabold" style={{ color: "var(--text-primary)" }}>78</span>
-                  <span className="text-[15px]" style={{ color: "var(--text-secondary)" }}>/100</span>
+                  <span className="text-[24px] font-extrabold" style={{ color: "var(--text-primary)" }}>78</span>
+                  <span className="text-[13px]" style={{ color: "var(--text-secondary)" }}>/100</span>
                 </div>
               </div>
             </div>
 
             <div className="grid grid-cols-3 gap-3 text-center">
               <div>
-                <p className="text-[18px] font-bold" style={{ color: "var(--accent-blue)" }}>{policies.length}</p>
+                <p className="text-[15px] font-bold" style={{ color: "var(--accent-blue)" }}>{policies.length}</p>
                 <p className="text-[11px]" style={{ color: "var(--text-muted)" }}>보험증권</p>
               </div>
               <div>
-                <p className="text-[18px] font-bold" style={{ color: "var(--accent-purple)" }}>{totalRiders}</p>
+                <p className="text-[15px] font-bold" style={{ color: "var(--accent-purple)" }}>{totalRiders}</p>
                 <p className="text-[11px]" style={{ color: "var(--text-muted)" }}>총 특약</p>
               </div>
               <div>
-                <p className="text-[18px] font-bold" style={{ color: "var(--accent-green)" }}>5</p>
+                <p className="text-[15px] font-bold" style={{ color: "var(--accent-green)" }}>5</p>
                 <p className="text-[11px]" style={{ color: "var(--text-muted)" }}>보장영역</p>
               </div>
             </div>
@@ -138,8 +138,8 @@ export default function PremiumReportPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Coverage area analysis */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[17px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
             영역별 보장 수준
           </h3>
           <div className="space-y-4">
@@ -168,8 +168,8 @@ export default function PremiumReportPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Missing coverage warnings */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[17px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
             보장 부족 경고
           </h3>
           <div className="space-y-3">
@@ -202,8 +202,8 @@ export default function PremiumReportPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Duplicate coverage info */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[17px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
             중복 보장 분석
           </h3>
           <div className="space-y-3">
@@ -234,8 +234,8 @@ export default function PremiumReportPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* AI analysis report */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[17px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>AI 분석 리포트</h3>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>AI 분석 리포트</h3>
           <div className="space-y-4">
             {reportItems.map((item, i) => (
               <Card key={i} padding="md" hoverable>
@@ -254,7 +254,7 @@ export default function PremiumReportPage() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1.5">
-                      <p className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>{item.title}</p>
+                      <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>{item.title}</p>
                       <Badge variant={item.variant} className="text-[11px]">
                         {item.variant === "yellow" ? "주의" : item.variant === "red" ? "중요" : "참고"}
                       </Badge>
@@ -270,7 +270,7 @@ export default function PremiumReportPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* CTA */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
           <Button variant="primary" size="lg" fullWidth onClick={() => router.push("/dashboard")}>
             숨은 보험금 확인하기
           </Button>

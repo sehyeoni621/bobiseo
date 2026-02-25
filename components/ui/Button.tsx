@@ -13,9 +13,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "px-8 py-4 text-[17px] min-h-[52px] rounded-[16px]",
-  md: "px-10 py-5 text-[19px] min-h-[60px] rounded-[20px]",
-  lg: "px-12 py-6 text-[21px] min-h-[68px] rounded-[22px]",
+  sm: "px-5 py-2.5 text-[14px] min-h-[40px] rounded-[12px]",
+  md: "px-6 py-3 text-[15px] min-h-[46px] rounded-[14px]",
+  lg: "px-8 py-3.5 text-[16px] min-h-[52px] rounded-[16px]",
 };
 
 export default function Button({
@@ -64,7 +64,7 @@ export default function Button({
     <button
       className={`
         inline-flex items-center justify-center gap-2
-        font-semibold tracking-[-0.02em]
+        font-semibold tracking-[-0.01em]
         transition-all duration-150
         disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100
         active:scale-[0.97] active:opacity-90

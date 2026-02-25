@@ -13,7 +13,7 @@ const navItems: NavItem[] = [
     label: "홈",
     path: "/home",
     icon: (active) => (
-      <svg width="28" height="28" viewBox="0 0 24 24"
+      <svg width="24" height="24" viewBox="0 0 24 24"
         fill={active ? "var(--accent-blue)" : "none"}
         stroke={active ? "var(--accent-blue)" : "var(--text-muted)"}
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -26,7 +26,7 @@ const navItems: NavItem[] = [
     label: "분석",
     path: "/upload",
     icon: (active) => (
-      <svg width="28" height="28" viewBox="0 0 24 24"
+      <svg width="24" height="24" viewBox="0 0 24 24"
         fill="none"
         stroke={active ? "var(--accent-blue)" : "var(--text-muted)"}
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -41,7 +41,7 @@ const navItems: NavItem[] = [
     label: "시뮬레이션",
     path: "/simulation",
     icon: (active) => (
-      <svg width="28" height="28" viewBox="0 0 24 24"
+      <svg width="24" height="24" viewBox="0 0 24 24"
         fill="none"
         stroke={active ? "var(--accent-blue)" : "var(--text-muted)"}
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -55,7 +55,7 @@ const navItems: NavItem[] = [
     label: "청구",
     path: "/dashboard",
     icon: (active) => (
-      <svg width="28" height="28" viewBox="0 0 24 24"
+      <svg width="24" height="24" viewBox="0 0 24 24"
         fill="none"
         stroke={active ? "var(--accent-blue)" : "var(--text-muted)"}
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -69,7 +69,7 @@ const navItems: NavItem[] = [
     label: "MY",
     path: "/settings",
     icon: (active) => (
-      <svg width="28" height="28" viewBox="0 0 24 24"
+      <svg width="24" height="24" viewBox="0 0 24 24"
         fill={active ? "var(--accent-blue)" : "none"}
         stroke={active ? "var(--accent-blue)" : "var(--text-muted)"}
         strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -86,28 +86,28 @@ export default function BottomNav() {
 
   return (
     <nav
-      className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[520px] z-50"
+      className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] sm:max-w-[520px] z-50"
       style={{
         background: "var(--bg-primary)",
         borderTop: "1px solid var(--border)",
-        paddingBottom: "env(safe-area-inset-bottom, 4px)",
+        paddingBottom: "env(safe-area-inset-bottom, 0px)",
       }}
     >
-      <div className="flex items-center justify-around px-3 pt-5 pb-4">
+      <div className="flex items-center justify-around px-2 py-2">
         {navItems.map((item) => {
           const isActive = pathname === item.path || pathname?.startsWith(item.path + "/");
           return (
             <button
               key={item.path}
               onClick={() => router.push(item.path)}
-              className="flex flex-col items-center gap-2 py-2 px-4 min-w-[68px] transition-all duration-150"
+              className="flex flex-col items-center gap-1 py-1.5 px-3 min-w-[56px] transition-all duration-150"
               aria-label={item.label}
             >
               <div className={`transition-transform duration-150 ${isActive ? "scale-105" : ""}`}>
                 {item.icon(isActive)}
               </div>
               <span
-                className="text-[14px] font-semibold leading-none"
+                className="text-[11px] font-semibold leading-none"
                 style={{ color: isActive ? "var(--accent-blue)" : "var(--text-muted)" }}
               >
                 {item.label}

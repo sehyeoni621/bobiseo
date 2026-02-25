@@ -15,7 +15,7 @@ const actions: QuickAction[] = [
     path: "/upload",
     color: "var(--accent-blue)",
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
         <polyline points="14 2 14 8 20 8" />
         <line x1="12" y1="18" x2="12" y2="12" />
@@ -28,7 +28,7 @@ const actions: QuickAction[] = [
     path: "/doc-scan",
     color: "var(--accent-red)",
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-red)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent-red)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
       </svg>
     ),
@@ -38,7 +38,7 @@ const actions: QuickAction[] = [
     path: "/simulation",
     color: "var(--accent-purple)",
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" />
         <path d="M8 21h8M12 17v4" />
         <path d="M7 10l3 3 4-5 3 2" />
@@ -50,7 +50,7 @@ const actions: QuickAction[] = [
     path: "/claim",
     color: "var(--accent-green)",
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
@@ -61,21 +61,21 @@ export default function QuickActions() {
   const router = useRouter();
 
   return (
-    <div className="grid grid-cols-2 gap-5">
+    <div className="grid grid-cols-4 gap-3">
       {actions.map((action, i) => (
         <button
           key={action.path}
           onClick={() => router.push(action.path)}
-          className={`flex flex-col items-center gap-4 py-8 rounded-[24px] transition-all duration-150 active:scale-[0.96] active:opacity-80 animate-slide-up stagger-${i + 1}`}
+          className={`flex flex-col items-center gap-2.5 py-5 rounded-[16px] transition-all duration-150 active:scale-[0.96] active:opacity-80 animate-slide-up stagger-${i + 1}`}
           style={{ background: "var(--bg-secondary)" }}
         >
           <div
-            className="w-16 h-16 rounded-full flex items-center justify-center"
+            className="w-12 h-12 rounded-full flex items-center justify-center"
             style={{ background: `color-mix(in srgb, ${action.color} 12%, transparent)` }}
           >
             {action.icon}
           </div>
-          <p className="text-[17px] font-semibold" style={{ color: "var(--text-secondary)" }}>
+          <p className="text-[12px] font-semibold" style={{ color: "var(--text-secondary)" }}>
             {action.label}
           </p>
         </button>

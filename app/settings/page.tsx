@@ -82,8 +82,8 @@ export default function SettingsPage() {
 
       <div style={{ background: "var(--bg-secondary)" }}>
         {/* Profile section */}
-        <div className="px-8 py-9 animate-fade-in" style={{ background: "var(--bg-primary)" }}>
-          <div className="flex items-center gap-6">
+        <div className="px-5 py-5 animate-fade-in" style={{ background: "var(--bg-primary)" }}>
+          <div className="flex items-center gap-4">
             <div
               className="w-24 h-24 rounded-full flex items-center justify-center"
               style={{ background: "color-mix(in srgb, var(--accent-blue) 12%, transparent)" }}
@@ -93,8 +93,8 @@ export default function SettingsPage() {
               </svg>
             </div>
             <div className="flex-1">
-              <p className="text-[22px] font-bold" style={{ color: "var(--text-primary)" }}>{user?.name || "김보비"}</p>
-              <p className="text-[16px] mt-1" style={{ color: "var(--text-muted)" }}>{user?.phone || "010-1234-5678"}</p>
+              <p className="text-[17px] font-bold" style={{ color: "var(--text-primary)" }}>{user?.name || "김보비"}</p>
+              <p className="text-[13px] mt-1" style={{ color: "var(--text-muted)" }}>{user?.phone || "010-1234-5678"}</p>
             </div>
             <Badge variant={user?.isPremium ? "yellow" : "gray"}>
               {user?.isPremium ? "PRO" : "무료"}
@@ -103,14 +103,14 @@ export default function SettingsPage() {
         </div>
 
         {/* Section separator */}
-        <div className="h-5" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Theme toggle */}
-        <div className="px-8 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
-          <div className="flex items-center justify-between py-7">
-            <div className="flex items-center gap-5">
+        <div className="px-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+          <div className="flex items-center justify-between py-5">
+            <div className="flex items-center gap-3">
               <div
-                className="w-14 h-14 rounded-[18px] flex items-center justify-center"
+                className="w-11 h-11 rounded-[18px] flex items-center justify-center"
                 style={{ background: "var(--bg-secondary)" }}
               >
                 {theme === "dark" ? (
@@ -120,8 +120,8 @@ export default function SettingsPage() {
                 )}
               </div>
               <div>
-                <p className="text-[19px] font-bold" style={{ color: "var(--text-primary)" }}>화면 테마</p>
-                <p className="text-[15px] mt-0.5" style={{ color: "var(--text-muted)" }}>
+                <p className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>화면 테마</p>
+                <p className="text-[13px] mt-0.5" style={{ color: "var(--text-muted)" }}>
                   {theme === "dark" ? "다크 모드" : "라이트 모드"}
                 </p>
               </div>
@@ -131,26 +131,26 @@ export default function SettingsPage() {
         </div>
 
         {/* Section separator */}
-        <div className="h-5" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Menu items as clean list */}
-        <div className="px-8 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
           {menuItems.map((item, i) => (
             <div key={i}>
               <button
                 onClick={() => item.path && router.push(item.path)}
-                className="w-full flex items-center gap-6 py-7 text-left active:scale-[0.97] active:opacity-90 transition-all"
+                className="w-full flex items-center gap-4 py-5 text-left active:scale-[0.97] active:opacity-90 transition-all"
               >
                 <div
-                  className="w-14 h-14 rounded-[18px] flex items-center justify-center flex-shrink-0"
+                  className="w-11 h-11 rounded-[18px] flex items-center justify-center flex-shrink-0"
                   style={{ background: "var(--bg-secondary)" }}
                 >
                   {item.icon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[19px] font-bold" style={{ color: "var(--text-primary)" }}>{item.label}</p>
+                  <p className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>{item.label}</p>
                   {item.description && (
-                    <p className="text-[15px] mt-0.5" style={{ color: "var(--text-muted)" }}>{item.description}</p>
+                    <p className="text-[13px] mt-0.5" style={{ color: "var(--text-muted)" }}>{item.description}</p>
                   )}
                 </div>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2">
@@ -165,18 +165,18 @@ export default function SettingsPage() {
         </div>
 
         {/* Section separator */}
-        <div className="h-5" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Logout & version */}
-        <div className="px-8 py-9" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
           <button
             onClick={handleLogout}
-            className="w-full text-center text-[19px] font-medium py-6 rounded-[20px] active:scale-[0.97] active:opacity-90 transition-all"
+            className="w-full text-center text-[15px] font-medium py-5 rounded-[20px] active:scale-[0.97] active:opacity-90 transition-all"
             style={{ color: "var(--accent-red)", background: "color-mix(in srgb, var(--accent-red) 8%, transparent)" }}
           >
             로그아웃
           </button>
-          <p className="text-center text-[15px] mt-6" style={{ color: "var(--text-muted)" }}>
+          <p className="text-center text-[13px] mt-6" style={{ color: "var(--text-muted)" }}>
             bobiseo v1.0.0 (MVP)
           </p>
         </div>

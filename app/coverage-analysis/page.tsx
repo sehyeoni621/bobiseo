@@ -44,7 +44,7 @@ function ScoreGauge({ score }: { score: number }) {
         />
       </svg>
       <div className="absolute text-center">
-        <span className="text-[36px] font-extrabold" style={{ color: "var(--text-primary)" }}>{score}</span>
+        <span className="text-[28px] font-extrabold" style={{ color: "var(--text-primary)" }}>{score}</span>
         <span className="text-[14px] block -mt-1" style={{ color: "var(--text-muted)" }}>/ 100</span>
       </div>
     </div>
@@ -61,11 +61,11 @@ function AreaDetail({ area, isOpen, onToggle }: { area: CoverageArea; isOpen: bo
         {/* Score bar */}
         <div className="flex-1">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>
+            <span className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>
               {area.label}
             </span>
             <span
-              className="text-[15px] font-bold"
+              className="text-[13px] font-bold"
               style={{ color: area.score < 50 ? "var(--accent-red)" : area.color }}
             >
               {area.score}점
@@ -158,9 +158,9 @@ export default function CoverageAnalysisPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Overall score */}
-        <div className="px-7 pt-6 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
           <div className="text-center mb-5">
-            <p className="text-[15px] mb-4" style={{ color: "var(--text-secondary)" }}>
+            <p className="text-[13px] mb-4" style={{ color: "var(--text-secondary)" }}>
               종합 보장 충실도
             </p>
             <ScoreGauge score={overallScore} />
@@ -175,7 +175,7 @@ export default function CoverageAnalysisPage() {
               { value: coverageAreas.length, label: "분석 영역", color: "var(--accent-yellow)" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-[20px] font-bold" style={{ color: stat.color }}>{stat.value}</p>
+                <p className="text-[16px] font-bold" style={{ color: stat.color }}>{stat.value}</p>
                 <p className="text-[11px]" style={{ color: "var(--text-muted)" }}>{stat.label}</p>
               </div>
             ))}
@@ -185,8 +185,8 @@ export default function CoverageAnalysisPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Coverage areas */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[17px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
             영역별 보장 분석
           </h3>
           <div className="space-y-3">
@@ -204,8 +204,8 @@ export default function CoverageAnalysisPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Coverage gaps */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[17px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
             보장 공백 분석
           </h3>
           <div className="space-y-3">
@@ -219,7 +219,7 @@ export default function CoverageAnalysisPage() {
                 >
                   <div className="flex items-center gap-2 mb-3">
                     <Badge variant={config.variant}>{config.label}</Badge>
-                    <span className="text-[15px] font-bold" style={{ color: "var(--text-primary)" }}>
+                    <span className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>
                       {gap.area}
                     </span>
                   </div>
@@ -261,8 +261,8 @@ export default function CoverageAnalysisPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Monthly premium breakdown */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[17px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
             월 보험료 분석
           </h3>
 
@@ -310,7 +310,7 @@ export default function CoverageAnalysisPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* CTA */}
-        <div className="px-7 py-6 space-y-3" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-5 space-y-3" style={{ background: "var(--bg-primary)" }}>
           <Button variant="primary" size="lg" fullWidth onClick={() => router.push("/premium-report")}>
             프리미엄 리포트 보기
           </Button>

@@ -19,19 +19,19 @@ export default function Header({
 
   return (
     <header
-      className={`sticky top-0 z-50 flex items-center justify-between px-8 h-[72px] ${className}`}
+      className={`sticky top-0 z-50 flex items-center justify-between px-4 sm:px-6 h-14 ${className}`}
       style={{ background: "var(--bg-primary)" }}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
         {showBack && (
           <button
             onClick={() => router.back()}
-            className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-150 active:scale-90 active:bg-[var(--bg-secondary)]"
+            className="w-10 h-10 flex items-center justify-center rounded-full transition-all duration-150 active:scale-90 active:bg-[var(--bg-secondary)]"
             aria-label="Back"
           >
             <svg
-              width="22"
-              height="22"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="var(--text-primary)"
@@ -44,7 +44,7 @@ export default function Header({
           </button>
         )}
         <h1
-          className="text-[22px] font-bold"
+          className="text-[17px] font-bold"
           style={{ color: "var(--text-primary)" }}
         >
           {title}
