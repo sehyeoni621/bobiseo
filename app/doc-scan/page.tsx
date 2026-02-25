@@ -15,6 +15,8 @@ import { hasMatchingPolicy, matchPolicies } from "@/data/known-policies";
 import { useScanStore } from "@/store/useScanStore";
 import { DocType } from "@/types/kcd";
 
+const DEMO_KEYWORDS = ["세부진료", "진료비확인", "김보비", "medical_receipt", "medical-receipt"];
+
 interface DocOption {
   type: DocType;
   abbr: string;
@@ -42,6 +44,7 @@ export default function DocScanPage() {
   const [ocrProgress, setOcrProgress] = useState(0);
   const [capturedImage, setCapturedImage] = useState<Blob | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [uploadedFileName, setUploadedFileName] = useState<string>("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const processImage = async (imageSource: Blob | File) => {
@@ -110,15 +113,57 @@ export default function DocScanPage() {
     if (!file) return;
     setCapturedImage(file);
     setPreviewUrl(URL.createObjectURL(file));
+    setUploadedFileName(file.name);
+  };
+
+  const isDemoFile = (fileName: string): boolean => {
+    const normalized = decodeURIComponent(fileName).toLowerCase();
+    return DEMO_KEYWORDS.some((kw) => normalized.includes(kw));
+  };
+
+  const processDemoFile = () => {
+    if (!selected) return;
+    setIsProcessing(true);
+    setOcrProgress(0);
+    toast.info("서류 스캔 분석을 시작합니다...");
+
+    const steps = [15, 35, 55, 75, 90, 100];
+    steps.forEach((val, i) => {
+      setTimeout(() => setOcrProgress(val), (i + 1) * 400);
+    });
+
+    setTimeout(() => {
+      toast.success("세부진료비확인서 분석이 완료되었습니다!");
+
+      setDocType(selected);
+      loadMockData();
+
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("scan_result", JSON.stringify({
+          ocrText: "세부진료비확인서 제주대학교병원 M51.1 요추간판장애 신경근병증 경막외신경차단술 신한라이프 통합건강보험",
+          confidence: 96.5,
+          docType: selected,
+          matchedPolicies: [],
+        }));
+      }
+
+      setIsProcessing(false);
+      setTimeout(() => router.push("/doc-scan-result"), 300);
+    }, 2800);
   };
 
   const handleScan = () => {
     if (!selected) return;
 
+    // Demo file detection
+    if (uploadedFileName && isDemoFile(uploadedFileName)) {
+      processDemoFile();
+      return;
+    }
+
     if (capturedImage) {
       processImage(capturedImage);
     } else {
-      // No image yet - open camera or file chooser
       setShowCamera(true);
     }
   };

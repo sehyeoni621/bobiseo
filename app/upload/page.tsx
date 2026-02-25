@@ -10,8 +10,12 @@ import ProgressBar from "@/components/ui/ProgressBar";
 import CameraCapture from "@/components/upload/CameraCapture";
 import { useToast } from "@/components/ui/Toast";
 import { performOcr, extractPolicyInfo } from "@/lib/ocr";
-import { hasMatchingPolicy, matchPolicies } from "@/data/known-policies";
+import { hasMatchingPolicy, matchPolicies, knownPolicies } from "@/data/known-policies";
 import { usePolicyStore } from "@/store/usePolicyStore";
+import { useScanStore } from "@/store/useScanStore";
+
+// Demo file detection keywords
+const DEMO_KEYWORDS = ["세부진료", "진료비확인", "김보비", "medical_receipt", "medical-receipt"];
 
 type UploadMethod = "camera" | "file" | "mydata";
 
@@ -19,7 +23,9 @@ export default function UploadPage() {
   const router = useRouter();
   const toast = useToast();
   const loadMockData = usePolicyStore((s) => s.loadMockData);
+  const loadScanMockData = useScanStore((s) => s.loadMockData);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [uploadedFileName, setUploadedFileName] = useState<string>("");
 
   const [selectedMethod, setSelectedMethod] = useState<UploadMethod | null>(null);
   const [showCamera, setShowCamera] = useState(false);
@@ -99,7 +105,54 @@ export default function UploadPage() {
 
     setCapturedImage(file);
     setPreviewUrl(URL.createObjectURL(file));
+    setUploadedFileName(file.name);
     setSelectedMethod("file");
+  };
+
+  const isDemoFile = (fileName: string): boolean => {
+    const normalized = decodeURIComponent(fileName).toLowerCase();
+    return DEMO_KEYWORDS.some((kw) => normalized.includes(kw));
+  };
+
+  const processDemoFile = () => {
+    setIsProcessing(true);
+    setOcrProgress(0);
+    toast.info("AI 서류 분석을 시작합니다...");
+
+    // Simulate OCR progress animation
+    const steps = [15, 35, 55, 75, 90, 100];
+    steps.forEach((val, i) => {
+      setTimeout(() => setOcrProgress(val), (i + 1) * 400);
+    });
+
+    setTimeout(() => {
+      const matchedPolicy = knownPolicies.find((p) => p.id === "kp-044");
+
+      toast.success(
+        matchedPolicy
+          ? `"${matchedPolicy.productName}" 약관이 매칭되었습니다!`
+          : "세부진료비 분석이 완료되었습니다."
+      );
+
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("ocr_result", JSON.stringify({
+          ocrText: "세부진료비확인서 제주대학교병원 신한라이프 통합건강보험 원(ONE)(무배당) 실손의료비 질병입원일당 질병수술비 M51.1 요추간판장애 경막외신경차단술",
+          confidence: 96.5,
+          matchedPolicies: matchedPolicy ? [matchedPolicy] : [],
+          extractedInfo: {
+            insurer: "신한라이프",
+            productName: "신한통합건강보험 원(ONE)(무배당)",
+            contractDate: "2023-06-15",
+            coverageItems: ["실손의료비", "입원일당", "수술비", "진단비", "통원치료비"],
+          },
+        }));
+      }
+
+      loadMockData();
+      loadScanMockData();
+      setIsProcessing(false);
+      setTimeout(() => router.push("/ocr-result"), 300);
+    }, 2800);
   };
 
   const handleUpload = () => {
@@ -111,6 +164,12 @@ export default function UploadPage() {
         toast.success("마이데이터 연동 완료!");
         router.push("/ocr-result");
       }, 1500);
+      return;
+    }
+
+    // Demo file detection: PDF or image with demo keywords in filename
+    if (uploadedFileName && isDemoFile(uploadedFileName)) {
+      processDemoFile();
       return;
     }
 
