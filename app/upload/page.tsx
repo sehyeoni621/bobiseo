@@ -270,7 +270,7 @@ export default function UploadPage() {
         )}
 
         {/* Upload button */}
-        <div className="px-8 py-8" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-8 pt-8 pb-10" style={{ background: "var(--bg-primary)" }}>
           <Button
             variant="primary"
             size="lg"

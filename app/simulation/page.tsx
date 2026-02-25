@@ -189,7 +189,7 @@ export default function SimulationPage() {
           </div>
 
           {/* CTA */}
-          <div className="px-6 py-6" style={{ background: "var(--bg-primary)" }}>
+          <div className="px-6 pt-6 pb-8" style={{ background: "var(--bg-primary)" }}>
             <Button variant="primary" size="lg" fullWidth onClick={() => setStep("result")}>
               보험금 청구 시뮬레이션 시작
             </Button>
@@ -332,7 +332,7 @@ export default function SimulationPage() {
 
         {/* CTA */}
         <div className="px-6 py-6" style={{ background: "var(--bg-primary)" }}>
-          <div className="space-y-4 pb-5">
+          <div className="space-y-4 pb-8">
             <Button variant="primary" size="lg" fullWidth onClick={() => router.push("/claim")}>
               실제 청구 시작하기
             </Button>

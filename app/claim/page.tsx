@@ -66,7 +66,7 @@ export default function ClaimPage() {
 
       <div className="animate-slide-in">
         {/* Step progress */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-7 pt-6 pb-8" style={{ background: "var(--bg-primary)" }}>
           <div className="mb-6">
             {steps.map((step, i) => {
               const stepNum = i + 1;

@@ -133,6 +133,39 @@ export default function HomePage() {
             </svg>
           </button>
         </div>
+
+        {/* Spacer */}
+        <div className="h-5" style={{ background: "var(--bg-secondary)" }} />
+
+        {/* Coverage analysis banner */}
+        <div className="px-8 py-8" style={{ background: "var(--bg-primary)" }}>
+          <button
+            onClick={() => router.push("/coverage-analysis")}
+            className="w-full rounded-[24px] p-7 flex items-center gap-5 transition-all duration-150 active:scale-[0.98] active:opacity-90"
+            style={{ background: "var(--bg-secondary)" }}
+          >
+            <div
+              className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0"
+              style={{ background: "color-mix(in srgb, var(--accent-green) 10%, transparent)" }}
+            >
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21.21 15.89A10 10 0 118 2.83" />
+                <path d="M22 12A10 10 0 0012 2v10z" />
+              </svg>
+            </div>
+            <div className="flex-1 text-left">
+              <p className="text-[19px] font-bold" style={{ color: "var(--text-primary)" }}>
+                내 보장 분석 리포트
+              </p>
+              <p className="text-[16px] mt-2" style={{ color: "var(--text-muted)" }}>
+                영역별 보장 수준과 공백을 확인하세요
+              </p>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-disabled)" strokeWidth="2">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
       </div>
       <BottomNav />
     </MobileFrame>

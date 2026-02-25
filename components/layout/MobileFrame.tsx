@@ -19,7 +19,7 @@ export default function MobileFrame({
       <div
         className={`
           w-full max-w-[520px] min-h-screen relative
-          ${showNav ? "pb-32" : ""}
+          ${showNav ? "pb-36" : ""}
           ${className}
         `}
         style={{ background: "var(--bg-secondary)" }}

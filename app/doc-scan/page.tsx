@@ -156,7 +156,7 @@ export default function DocScanPage() {
         <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Document type selection */}
-        <div className="px-7 py-6" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-7 pt-6 pb-8" style={{ background: "var(--bg-primary)" }}>
           <h3 className="text-[17px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>서류 종류 선택</h3>
           <div className="space-y-4 mb-6">
             {docOptions.map((option) => {

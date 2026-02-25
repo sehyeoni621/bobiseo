@@ -343,7 +343,7 @@ export default function MedicalReceiptPage() {
           </div>
 
           {/* Action buttons */}
-          <div className="space-y-3 pb-5">
+          <div className="space-y-3 pb-8">
             <Button
               variant="primary"
               size="lg"
