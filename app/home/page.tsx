@@ -39,7 +39,7 @@ export default function HomePage() {
       <div className="animate-fade-in">
         {/* Top bar */}
         <div
-          className="flex items-center justify-between px-5 pt-12 pb-5"
+          className="flex items-center justify-between px-5 pt-14 pb-6"
           style={{ background: "var(--bg-primary)" }}
         >
           <div>
@@ -81,7 +81,7 @@ export default function HomePage() {
         </div>
 
         {/* Summary */}
-        <div className="px-5 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pb-6" style={{ background: "var(--bg-primary)" }}>
           <SummaryCard
             totalAmount={totalUnclaimedAmount}
             analyzedCount={policies.length}
@@ -91,24 +91,24 @@ export default function HomePage() {
         </div>
 
         {/* Spacer */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Quick actions section */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
-          <h2 className="text-[16px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
+          <h2 className="text-[16px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>
             빠른 실행
           </h2>
           <QuickActions />
         </div>
 
         {/* Spacer */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Simulation banner */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
           <button
             onClick={() => router.push("/simulation")}
-            className="w-full rounded-[16px] p-5 flex items-center gap-4 transition-all duration-150 active:scale-[0.98] active:opacity-90"
+            className="w-full rounded-[16px] p-6 flex items-center gap-4 transition-all duration-150 active:scale-[0.98] active:opacity-90"
             style={{ background: "var(--bg-secondary)" }}
           >
             <div
@@ -134,13 +134,13 @@ export default function HomePage() {
         </div>
 
         {/* Spacer */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Coverage analysis banner */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
           <button
             onClick={() => router.push("/coverage-analysis")}
-            className="w-full rounded-[16px] p-5 flex items-center gap-4 transition-all duration-150 active:scale-[0.98] active:opacity-90"
+            className="w-full rounded-[16px] p-6 flex items-center gap-4 transition-all duration-150 active:scale-[0.98] active:opacity-90"
             style={{ background: "var(--bg-secondary)" }}
           >
             <div

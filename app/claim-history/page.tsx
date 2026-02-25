@@ -39,15 +39,15 @@ export default function ClaimHistoryPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Summary cards */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
           <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-[16px] p-5" style={{ background: "var(--bg-secondary)" }}>
+            <div className="rounded-[16px] p-6" style={{ background: "var(--bg-secondary)" }}>
               <p className="text-[12px] mb-1.5" style={{ color: "var(--text-muted)" }}>총 수령액</p>
               <p className="text-[16px] font-extrabold" style={{ color: "var(--accent-green)" }}>
                 {totalPaid.toLocaleString("ko-KR")}원
               </p>
             </div>
-            <div className="rounded-[16px] p-5" style={{ background: "var(--bg-secondary)" }}>
+            <div className="rounded-[16px] p-6" style={{ background: "var(--bg-secondary)" }}>
               <p className="text-[12px] mb-1.5" style={{ color: "var(--text-muted)" }}>진행중</p>
               <p className="text-[16px] font-extrabold" style={{ color: "var(--accent-blue)" }}>
                 {pendingCount}건
@@ -56,7 +56,7 @@ export default function ClaimHistoryPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Filter tabs */}
         <div className="px-5 pt-5 pb-3" style={{ background: "var(--bg-primary)" }}>
@@ -123,7 +123,7 @@ function ClaimCard({
     <div className="rounded-[16px] overflow-hidden" style={{ background: "var(--bg-secondary)" }}>
       <button
         onClick={onToggle}
-        className="w-full p-4 flex items-center gap-4 text-left active:opacity-80 transition-all"
+        className="w-full p-5 flex items-center gap-4 text-left active:opacity-80 transition-all"
       >
         {/* Status indicator */}
         <div

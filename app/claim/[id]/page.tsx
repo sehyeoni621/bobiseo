@@ -34,7 +34,7 @@ export default function ClaimDetailPage() {
 
       <div className="animate-slide-in">
         {/* Disease code info */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
           <Card variant="filled" padding="lg">
             <div className="flex items-center gap-4">
               <Badge variant="red">M51.1</Badge>
@@ -47,11 +47,11 @@ export default function ClaimDetailPage() {
         </div>
 
         {/* Section separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Coverage matching results */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>보장 매칭 결과</h3>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>보장 매칭 결과</h3>
           <div className="space-y-3 mb-5">
             {mockRiderMatches.map((rider, i) => (
               <Card key={i} padding="md">
@@ -75,10 +75,10 @@ export default function ClaimDetailPage() {
         </div>
 
         {/* Section separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Total amount */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
           <Card variant="filled" padding="lg" className="mb-5">
             <div className="text-center">
               <p className="text-[13px] mb-1.5" style={{ color: "var(--text-secondary)" }}>예상 총 지급액</p>

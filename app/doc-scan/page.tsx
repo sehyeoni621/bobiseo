@@ -183,7 +183,7 @@ export default function DocScanPage() {
 
       <div className="animate-slide-in">
         {/* Info badge section */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
           <div className="mb-3">
             <Badge variant="blue" icon={
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -198,19 +198,19 @@ export default function DocScanPage() {
         </div>
 
         {/* Section separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Document type selection */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>서류 종류 선택</h3>
-          <div className="space-y-4 mb-4">
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-6" style={{ color: "var(--text-primary)" }}>서류 종류 선택</h3>
+          <div className="space-y-5 mb-5">
             {docOptions.map((option) => {
               const isSelected = selected === option.type;
               return (
                 <button
                   key={option.type}
                   onClick={() => setSelected(option.type)}
-                  className="w-full flex items-center gap-3 p-5 rounded-[18px] transition-all duration-200 text-left active:scale-[0.98]"
+                  className="w-full flex items-center gap-3 p-6 rounded-[18px] transition-all duration-200 text-left active:scale-[0.98]"
                   style={{
                     background: isSelected
                       ? `color-mix(in srgb, ${option.color} 8%, var(--bg-secondary))`
@@ -251,7 +251,7 @@ export default function DocScanPage() {
 
           {/* Upload options (after type selection) */}
           {selected && !capturedImage && (
-            <div className="flex gap-3 mb-5 animate-slide-up">
+            <div className="flex gap-3 mb-6 animate-slide-up">
               <Button
                 variant="secondary"
                 size="md"
@@ -301,7 +301,7 @@ export default function DocScanPage() {
           {/* Demo receipt banner */}
           <button
             onClick={() => router.push("/medical-receipt")}
-            className="w-full rounded-[16px] p-4 flex items-center gap-4 mb-5 transition-all duration-150 active:scale-[0.98] active:opacity-90 text-left"
+            className="w-full rounded-[16px] p-5 flex items-center gap-4 mb-5 transition-all duration-150 active:scale-[0.98] active:opacity-90 text-left"
             style={{ background: "color-mix(in srgb, var(--accent-purple) 6%, var(--bg-secondary))" }}
           >
             <div

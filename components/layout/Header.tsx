@@ -19,7 +19,7 @@ export default function Header({
 
   return (
     <header
-      className={`sticky top-0 z-50 flex items-center justify-between px-4 sm:px-6 h-14 ${className}`}
+      className={`sticky top-0 z-50 flex items-center justify-between px-5 h-16 ${className}`}
       style={{ background: "var(--bg-primary)" }}
     >
       <div className="flex items-center gap-2">
@@ -44,7 +44,7 @@ export default function Header({
           </button>
         )}
         <h1
-          className="text-[17px] font-bold"
+          className="text-[18px] font-bold"
           style={{ color: "var(--text-primary)" }}
         >
           {title}

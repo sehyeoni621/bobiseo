@@ -56,7 +56,7 @@ function AreaDetail({ area, isOpen, onToggle }: { area: CoverageArea; isOpen: bo
     <div className="rounded-[16px] overflow-hidden" style={{ background: "var(--bg-secondary)" }}>
       <button
         onClick={onToggle}
-        className="w-full flex items-center gap-4 p-4 text-left active:opacity-80 transition-all"
+        className="w-full flex items-center gap-4 p-5 text-left active:opacity-80 transition-all"
       >
         {/* Score bar */}
         <div className="flex-1">
@@ -158,8 +158,8 @@ export default function CoverageAnalysisPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Overall score */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
-          <div className="text-center mb-5">
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
+          <div className="text-center mb-6">
             <p className="text-[13px] mb-4" style={{ color: "var(--text-secondary)" }}>
               종합 보장 충실도
             </p>
@@ -182,11 +182,11 @@ export default function CoverageAnalysisPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Coverage areas */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>
             영역별 보장 분석
           </h3>
           <div className="space-y-3">
@@ -201,11 +201,11 @@ export default function CoverageAnalysisPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Coverage gaps */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>
             보장 공백 분석
           </h3>
           <div className="space-y-3">
@@ -214,7 +214,7 @@ export default function CoverageAnalysisPage() {
               return (
                 <div
                   key={gap.area}
-                  className="rounded-[16px] p-4"
+                  className="rounded-[16px] p-5"
                   style={{ background: config.bg }}
                 >
                   <div className="flex items-center gap-2 mb-3">
@@ -258,16 +258,16 @@ export default function CoverageAnalysisPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Monthly premium breakdown */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>
             월 보험료 분석
           </h3>
 
           <Card variant="filled" padding="lg">
-            <div className="text-center mb-5">
+            <div className="text-center mb-6">
               <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>총 월 보험료</p>
               <p className="text-[28px] font-extrabold mt-1" style={{ color: "var(--text-primary)" }}>
                 {formatKRW(totalMonthlyPremium)}
@@ -307,10 +307,10 @@ export default function CoverageAnalysisPage() {
           </Card>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* CTA */}
-        <div className="px-5 py-5 space-y-3" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6 space-y-3" style={{ background: "var(--bg-primary)" }}>
           <Button variant="primary" size="lg" fullWidth onClick={() => router.push("/premium-report")}>
             프리미엄 리포트 보기
           </Button>

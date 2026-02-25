@@ -82,7 +82,7 @@ export default function SettingsPage() {
 
       <div style={{ background: "var(--bg-secondary)" }}>
         {/* Profile section */}
-        <div className="px-5 py-5 animate-fade-in" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6 animate-fade-in" style={{ background: "var(--bg-primary)" }}>
           <div className="flex items-center gap-4">
             <div
               className="w-24 h-24 rounded-full flex items-center justify-center"
@@ -103,7 +103,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Section separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Theme toggle */}
         <div className="px-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
@@ -131,7 +131,7 @@ export default function SettingsPage() {
         </div>
 
         {/* Section separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Menu items as clean list */}
         <div className="px-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
@@ -165,10 +165,10 @@ export default function SettingsPage() {
         </div>
 
         {/* Section separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Logout & version */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
           <button
             onClick={handleLogout}
             className="w-full text-center text-[15px] font-medium py-5 rounded-[20px] active:scale-[0.97] active:opacity-90 transition-all"

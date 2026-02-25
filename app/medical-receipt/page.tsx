@@ -59,8 +59,8 @@ export default function MedicalReceiptPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Hospital header - official document style */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
-          <div className="text-center mb-5">
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
+          <div className="text-center mb-6">
             <p className="text-[16px] font-extrabold tracking-wide" style={{ color: "var(--text-primary)" }}>
               세부진료비확인서
             </p>
@@ -70,7 +70,7 @@ export default function MedicalReceiptPage() {
           </div>
 
           <div
-            className="rounded-[16px] p-5"
+            className="rounded-[16px] p-6"
             style={{ background: "var(--bg-secondary)" }}
           >
             <div className="flex items-center gap-4 mb-4">
@@ -106,18 +106,18 @@ export default function MedicalReceiptPage() {
         </div>
 
         {/* Separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Diagnosis section */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[13px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[13px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>
             진단명 (KCD 코드)
           </p>
           <div className="space-y-2.5">
             {receipt.diagnoses.map((d) => (
               <div
                 key={d.kcdCode}
-                className="flex items-center gap-3 rounded-[14px] p-4"
+                className="flex items-center gap-3 rounded-[14px] p-5"
                 style={{ background: "var(--bg-secondary)" }}
               >
                 <span
@@ -150,11 +150,11 @@ export default function MedicalReceiptPage() {
         </div>
 
         {/* Separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Detailed bill categories */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <div className="flex justify-between items-center mb-4">
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <div className="flex justify-between items-center mb-5">
             <p className="text-[13px] font-bold" style={{ color: "var(--text-primary)" }}>
               진료비 세부내역
             </p>
@@ -278,16 +278,16 @@ export default function MedicalReceiptPage() {
         </div>
 
         {/* Separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Grand total */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[13px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[13px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>
             진료비 합계
           </p>
 
           <div
-            className="rounded-[18px] p-5 space-y-3.5"
+            className="rounded-[18px] p-6 space-y-3.5"
             style={{ background: "var(--bg-secondary)" }}
           >
             <TotalRow label="총 진료비" amount={receipt.grandTotal.totalAmount} color="var(--text-primary)" bold />
@@ -313,13 +313,13 @@ export default function MedicalReceiptPage() {
         </div>
 
         {/* Separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Document info & CTA */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
           {/* Receipt metadata */}
           <div
-            className="rounded-[14px] p-4 mb-4"
+            className="rounded-[14px] p-5 mb-5"
             style={{ background: "var(--bg-secondary)" }}
           >
             <div className="grid grid-cols-2 gap-2.5 text-[12px]">

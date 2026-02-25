@@ -63,9 +63,9 @@ export default function LoginPage() {
         style={{ background: "var(--bg-primary)" }}
       >
         {/* Logo */}
-        <div className="flex flex-col items-center mt-12 mb-10">
+        <div className="flex flex-col items-center mt-14 mb-12">
           <div
-            className="w-18 h-18 rounded-[20px] flex items-center justify-center mb-5"
+            className="w-18 h-18 rounded-[20px] flex items-center justify-center mb-6"
             style={{ background: "var(--accent-blue)", width: 72, height: 72 }}
           >
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -73,7 +73,7 @@ export default function LoginPage() {
             </svg>
           </div>
           <h1
-            className="text-[28px] font-extrabold tracking-[-0.03em] mb-1"
+            className="text-[28px] font-extrabold tracking-[-0.03em] mb-2"
             style={{ color: "var(--text-primary)" }}
           >
             보비서
@@ -84,7 +84,7 @@ export default function LoginPage() {
         </div>
 
         {/* Form */}
-        <div className="space-y-3 mb-6">
+        <div className="space-y-3 mb-7">
           <input
             type="text"
             value={username}
@@ -115,7 +115,7 @@ export default function LoginPage() {
         </Button>
 
         {/* Divider */}
-        <div className="flex items-center gap-4 my-7">
+        <div className="flex items-center gap-4 my-8">
           <div className="flex-1 h-px" style={{ background: "var(--border)" }} />
           <span className="text-[13px] font-medium" style={{ color: "var(--text-disabled)" }}>또는</span>
           <div className="flex-1 h-px" style={{ background: "var(--border)" }} />
@@ -147,8 +147,8 @@ export default function LoginPage() {
         </div>
 
         {/* Demo hint */}
-        <div className="mt-auto pt-8">
-          <div className="rounded-[14px] p-4 text-center" style={{ background: "var(--bg-secondary)" }}>
+        <div className="mt-auto pt-10">
+          <div className="rounded-[14px] p-5 text-center" style={{ background: "var(--bg-secondary)" }}>
             <p className="text-[13px]" style={{ color: "var(--text-muted)" }}>
               체험 계정: bobi123 / 1234
             </p>

@@ -28,26 +28,26 @@ export default function DashboardPage() {
       <Header title="숨은 보험금" />
       <div style={{ background: "var(--bg-secondary)" }}>
         {/* Total amount section */}
-        <div className="px-5 py-6 animate-scale-in" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-7 animate-scale-in" style={{ background: "var(--bg-primary)" }}>
           <p className="text-[14px] mb-4" style={{ color: "var(--text-muted)" }}>총 예상 미청구 보험금</p>
-          <div className="flex items-baseline gap-2 mb-5">
+          <div className="flex items-baseline gap-2 mb-6">
             <span className="text-[32px] font-extrabold tracking-[-0.02em]" style={{ color: "var(--text-primary)" }}>
               {totalUnclaimedAmount.toLocaleString("ko-KR")}
             </span>
             <span className="text-[16px] font-bold" style={{ color: "var(--text-secondary)" }}>원</span>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-4">
             <Badge variant="blue">실손 {lossonAmount.toLocaleString("ko-KR")}원</Badge>
             <Badge variant="purple">정액 {fixedAmount.toLocaleString("ko-KR")}원</Badge>
           </div>
         </div>
 
         {/* Section separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Claimable items list */}
-        <div className="px-5 py-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[16px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>청구 가능 항목</p>
+        <div className="px-5 py-6 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[16px] font-bold mb-6" style={{ color: "var(--text-primary)" }}>청구 가능 항목</p>
           <div>
             {claimableItems.map((item, idx) => (
               <div key={item.id}>

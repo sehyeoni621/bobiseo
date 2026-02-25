@@ -93,7 +93,7 @@ export default function BottomNav() {
         paddingBottom: "env(safe-area-inset-bottom, 0px)",
       }}
     >
-      <div className="flex items-center justify-around px-2 py-2">
+      <div className="flex items-center justify-around px-2 py-2.5">
         {navItems.map((item) => {
           const isActive = pathname === item.path || pathname?.startsWith(item.path + "/");
           return (
@@ -107,7 +107,7 @@ export default function BottomNav() {
                 {item.icon(isActive)}
               </div>
               <span
-                className="text-[11px] font-semibold leading-none"
+                className="text-[11px] font-bold leading-none"
                 style={{ color: isActive ? "var(--accent-blue)" : "var(--text-muted)" }}
               >
                 {item.label}

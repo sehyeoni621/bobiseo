@@ -31,7 +31,7 @@ function FaqAccordion({ item, isOpen, onToggle }: { item: FaqItem; isOpen: boole
     >
       <button
         onClick={onToggle}
-        className="w-full flex items-start gap-3 p-4 text-left active:opacity-80 transition-all"
+        className="w-full flex items-start gap-3 p-5 text-left active:opacity-80 transition-all"
       >
         {/* Q icon */}
         <div
@@ -136,7 +136,7 @@ export default function FaqPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Search */}
-        <div className="px-5 pt-5 pb-4" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-6 pb-4" style={{ background: "var(--bg-primary)" }}>
           <div
             className="flex items-center gap-3 px-4 py-3 rounded-[14px]"
             style={{ background: "var(--bg-secondary)" }}
@@ -188,10 +188,10 @@ export default function FaqPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* FAQ list */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
           {filteredFaqs.length > 0 ? (
             <div className="space-y-3">
               {filteredFaqs.map((faq) => (
@@ -220,10 +220,10 @@ export default function FaqPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
           <div
-            className="rounded-[20px] p-5 text-center"
+            className="rounded-[20px] p-6 text-center"
             style={{ background: "var(--bg-secondary)" }}
           >
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-blue)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-3">

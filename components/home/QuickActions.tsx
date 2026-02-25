@@ -61,12 +61,12 @@ export default function QuickActions() {
   const router = useRouter();
 
   return (
-    <div className="grid grid-cols-4 gap-3">
+    <div className="grid grid-cols-4 gap-3.5">
       {actions.map((action, i) => (
         <button
           key={action.path}
           onClick={() => router.push(action.path)}
-          className={`flex flex-col items-center gap-2.5 py-5 rounded-[16px] transition-all duration-150 active:scale-[0.96] active:opacity-80 animate-slide-up stagger-${i + 1}`}
+          className={`flex flex-col items-center gap-3 py-6 rounded-[16px] transition-all duration-150 active:scale-[0.96] active:opacity-80 animate-slide-up stagger-${i + 1}`}
           style={{ background: "var(--bg-secondary)" }}
         >
           <div

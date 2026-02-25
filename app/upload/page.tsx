@@ -236,12 +236,12 @@ export default function UploadPage() {
 
       <div className="animate-slide-in">
         {/* Method cards */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
-          <p className="text-[15px] mb-5" style={{ color: "var(--text-secondary)" }}>
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
+          <p className="text-[15px] mb-6" style={{ color: "var(--text-secondary)" }}>
             보험증권을 업로드하면 AI가 자동으로 분석합니다
           </p>
 
-          <div className="space-y-4">
+          <div className="space-y-5">
             {methods.map((m) => (
               <button
                 key={m.key}
@@ -283,13 +283,13 @@ export default function UploadPage() {
         />
 
         {/* Spacer */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Simulation banner */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
           <button
             onClick={() => router.push("/simulation")}
-            className="w-full rounded-[16px] p-5 flex items-center gap-4 transition-all duration-150 active:scale-[0.98] active:opacity-90"
+            className="w-full rounded-[16px] p-6 flex items-center gap-4 transition-all duration-150 active:scale-[0.98] active:opacity-90"
             style={{ background: "var(--bg-secondary)" }}
           >
             <div
@@ -320,7 +320,7 @@ export default function UploadPage() {
 
         {/* OCR Progress */}
         {isProcessing && (
-          <div className="px-5 pb-5 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
+          <div className="px-5 pb-6 animate-slide-up" style={{ background: "var(--bg-primary)" }}>
             <ProgressBar value={ocrProgress} color="blue" height="md" showLabel />
             <p className="text-[13px] mt-3 text-center" style={{ color: "var(--text-muted)" }}>
               텍스트 인식 중...
@@ -329,7 +329,7 @@ export default function UploadPage() {
         )}
 
         {/* Upload button */}
-        <div className="px-5 pt-5 pb-10" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-6 pb-12" style={{ background: "var(--bg-primary)" }}>
           <Button
             variant="primary"
             size="lg"

@@ -66,7 +66,7 @@ export default function ClaimPage() {
 
       <div className="animate-slide-in">
         {/* Step progress */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
           <div className="mb-4">
             {steps.map((step, i) => {
               const stepNum = i + 1;
@@ -98,14 +98,14 @@ export default function ClaimPage() {
                     </div>
                     {i < steps.length - 1 && (
                       <div
-                        className="w-0.5 h-14"
+                        className="w-0.5 h-16"
                         style={{ background: isDone ? "var(--accent-green)" : "var(--bg-secondary)" }}
                       />
                     )}
                   </div>
 
                   {/* Step content */}
-                  <div className="flex-1 pb-5">
+                  <div className="flex-1 pb-6">
                     <p
                       className="text-[13px] font-bold"
                       style={{
@@ -124,7 +124,7 @@ export default function ClaimPage() {
 
                     {/* Step 4: Document checklist */}
                     {isCurrent && stepNum === 4 && (
-                      <div className="mt-4 space-y-4 animate-slide-up">
+                      <div className="mt-4 space-y-5 animate-slide-up">
                         {/* Progress summary */}
                         <Card variant="filled" padding="md">
                           <div className="flex items-center justify-between mb-2">

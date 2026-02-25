@@ -35,8 +35,8 @@ export default function OcrResultPage() {
 
       <div className="animate-slide-in">
         {/* Status badge section */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
-          <div className="flex justify-center mb-4">
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
+          <div className="flex justify-center mb-5">
             <Badge variant="green" icon={
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
             }>분석 완료</Badge>
@@ -44,7 +44,7 @@ export default function OcrResultPage() {
         </div>
 
         {/* Info card section */}
-        <div className="px-5 pb-5" style={{ background: "var(--bg-secondary)" }}>
+        <div className="px-5 pb-6" style={{ background: "var(--bg-secondary)" }}>
           <Card variant="filled" padding="lg">
             <div className="space-y-3">
               {infoItems.map((item) => (
@@ -66,11 +66,11 @@ export default function OcrResultPage() {
         </div>
 
         {/* Section separator */}
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Riders section */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>특약 목록</h3>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>특약 목록</h3>
           <div className="space-y-3 mb-5">
             {policy.riders.map((rider) => (
               <Card key={rider.id} padding="sm" className="flex items-center justify-between">

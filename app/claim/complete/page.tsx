@@ -23,7 +23,7 @@ export default function ClaimCompletePage() {
       >
         {/* Success icon */}
         <div
-          className="w-[88px] h-[88px] rounded-full flex items-center justify-center mb-5"
+          className="w-[88px] h-[88px] rounded-full flex items-center justify-center mb-6"
           style={{ background: "color-mix(in srgb, var(--accent-green) 12%, var(--bg-secondary))" }}
         >
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -38,14 +38,14 @@ export default function ClaimCompletePage() {
           청구 완료!
         </h1>
         <p
-          className="text-[13px] text-center mb-4"
+          className="text-[13px] text-center mb-5"
           style={{ color: "var(--text-secondary)" }}
         >
           보험사에 청구서가 성공적으로 전송되었습니다
         </p>
 
         {/* Info card */}
-        <Card variant="default" padding="lg" className="w-full mb-4">
+        <Card variant="default" padding="lg" className="w-full mb-5">
           <div className="space-y-3">
             {infoRows.map((row, i) => (
               <div key={i}>
@@ -65,7 +65,7 @@ export default function ClaimCompletePage() {
         </Card>
 
         {/* Action buttons */}
-        <div className="w-full space-y-4">
+        <div className="w-full space-y-5">
           <Button variant="primary" size="lg" fullWidth onClick={() => router.push("/claim-history")}>
             청구 현황 추적하기
           </Button>

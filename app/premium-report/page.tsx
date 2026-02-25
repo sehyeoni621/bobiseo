@@ -87,8 +87,8 @@ export default function PremiumReportPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* PRO badge + score */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
-          <div className="flex justify-center mb-5">
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
+          <div className="flex justify-center mb-6">
             <span
               className="px-5 py-2 rounded-full text-[13px] font-bold tracking-wider"
               style={{ background: "var(--accent-blue)", color: "#FFFFFF" }}
@@ -98,7 +98,7 @@ export default function PremiumReportPage() {
           </div>
 
           <Card variant="filled" padding="lg">
-            <div className="text-center mb-5">
+            <div className="text-center mb-6">
               <p className="text-[13px] mb-3" style={{ color: "var(--text-secondary)" }}>보장 충실도 점수</p>
               <div className="relative inline-flex items-center justify-center">
                 <svg width="120" height="120" viewBox="0 0 120 120">
@@ -135,14 +135,14 @@ export default function PremiumReportPage() {
           </Card>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Coverage area analysis */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>
             영역별 보장 수준
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-5">
             {coverageAreas.map((area) => (
               <div key={area.label} className="flex items-center gap-4">
                 <span className="text-[13px] font-bold w-10" style={{ color: "var(--text-primary)" }}>
@@ -165,18 +165,18 @@ export default function PremiumReportPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Missing coverage warnings */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>
             보장 부족 경고
           </h3>
           <div className="space-y-3">
             {missingCoverages.map((item) => (
               <div
                 key={item.area}
-                className="rounded-[16px] p-4"
+                className="rounded-[16px] p-5"
                 style={{
                   background: item.risk === "high"
                     ? "color-mix(in srgb, var(--accent-red) 6%, var(--bg-secondary))"
@@ -199,18 +199,18 @@ export default function PremiumReportPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Duplicate coverage info */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>
             중복 보장 분석
           </h3>
           <div className="space-y-3">
             {duplicateWarnings.map((item, i) => (
               <div
                 key={i}
-                className="rounded-[16px] p-4"
+                className="rounded-[16px] p-5"
                 style={{ background: "var(--bg-secondary)" }}
               >
                 <div className="flex items-center gap-2 mb-2">
@@ -231,12 +231,12 @@ export default function PremiumReportPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* AI analysis report */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>AI 분석 리포트</h3>
-          <div className="space-y-4">
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>AI 분석 리포트</h3>
+          <div className="space-y-5">
             {reportItems.map((item, i) => (
               <Card key={i} padding="md" hoverable>
                 <div className="flex items-start gap-4">
@@ -267,10 +267,10 @@ export default function PremiumReportPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* CTA */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
           <Button variant="primary" size="lg" fullWidth onClick={() => router.push("/dashboard")}>
             숨은 보험금 확인하기
           </Button>

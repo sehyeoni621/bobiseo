@@ -37,7 +37,7 @@ export default function MyPoliciesPage() {
 
       <div className="animate-slide-in" style={{ background: "var(--bg-secondary)" }}>
         {/* Summary */}
-        <div className="px-5 pt-5 pb-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 pt-6 pb-6" style={{ background: "var(--bg-primary)" }}>
           <div className="grid grid-cols-3 gap-3">
             <StatBox label="등록 증권" value={`${policies.length}건`} color="var(--accent-blue)" />
             <StatBox label="총 특약" value={`${totalRiders}개`} color="var(--accent-purple)" />
@@ -45,14 +45,14 @@ export default function MyPoliciesPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Policy cards */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
-          <h3 className="text-[14px] font-bold mb-4" style={{ color: "var(--text-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
+          <h3 className="text-[14px] font-bold mb-5" style={{ color: "var(--text-primary)" }}>
             내 보험 목록
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-5">
             {policies.map((policy) => (
               <PolicyCard
                 key={policy.id}
@@ -66,10 +66,10 @@ export default function MyPoliciesPage() {
           </div>
         </div>
 
-        <div className="h-3" style={{ background: "var(--bg-secondary)" }} />
+        <div className="h-2" style={{ background: "var(--bg-secondary)" }} />
 
         {/* Add button */}
-        <div className="px-5 py-5" style={{ background: "var(--bg-primary)" }}>
+        <div className="px-5 py-6" style={{ background: "var(--bg-primary)" }}>
           <Button
             variant="primary"
             size="lg"
@@ -93,7 +93,7 @@ export default function MyPoliciesPage() {
 
 function StatBox({ label, value, color }: { label: string; value: string; color: string }) {
   return (
-    <div className="rounded-[14px] p-4 text-center" style={{ background: "var(--bg-secondary)" }}>
+    <div className="rounded-[14px] p-5 text-center" style={{ background: "var(--bg-secondary)" }}>
       <p className="text-[15px] font-extrabold" style={{ color }}>{value}</p>
       <p className="text-[12px] mt-1" style={{ color: "var(--text-muted)" }}>{label}</p>
     </div>
@@ -120,7 +120,7 @@ function PolicyCard({
       {/* Card header */}
       <button
         onClick={onToggle}
-        className="w-full p-5 flex items-center gap-4 text-left active:opacity-80 transition-all"
+        className="w-full p-6 flex items-center gap-4 text-left active:opacity-80 transition-all"
       >
         <div
           className="w-10 h-10 rounded-[14px] flex items-center justify-center flex-shrink-0"
@@ -157,7 +157,7 @@ function PolicyCard({
 
       {/* Expanded riders */}
       {isExpanded && (
-        <div className="px-5 pb-5 animate-slide-up">
+        <div className="px-5 pb-6 animate-slide-up">
           <div className="h-px mb-4" style={{ background: "var(--border)" }} />
 
           <div className="grid grid-cols-2 gap-2.5 mb-4">
