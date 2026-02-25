@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+/* ===== Toss-style Light Theme (default) ===== */
+:root,
+[data-theme="light"] {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F4F4F4;
+  --bg-tertiary: #F4F4F4;
+  --bg-elevated: #FFFFFF;
+  --border: #F0F0F0;
+  --border-strong: #E5E8EB;
+  --accent-blue: #3182F6;
+  --accent-blue-light: #4A93F7;
+  --accent-green: #00C072;
+  --accent-red: #F04452;
+  --accent-yellow: #FF9500;
+  --accent-purple: #8B5CF6;
+  --accent-cyan: #00B8D9;
+  --text-primary: #191F28;
+  --text-secondary: #4E5968;
+  --text-muted: #8B95A1;
+  --text-disabled: #B0B8C1;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* ===== Dark Theme ===== */
+[data-theme="dark"] {
+  --bg-primary: #17171C;
+  --bg-secondary: #1B1C22;
+  --bg-tertiary: #101014;
+  --bg-elevated: #25262B;
+  --border: #2C2D33;
+  --border-strong: #3A3B42;
+  --accent-blue: #3182F6;
+  --accent-blue-light: #5B9BF7;
+  --accent-green: #00C072;
+  --accent-red: #F04452;
+  --accent-yellow: #FF9500;
+  --accent-purple: #8B5CF6;
+  --accent-cyan: #00B8D9;
+  --text-primary: #ECECEC;
+  --text-secondary: #A0A0A0;
+  --text-muted: #6B6B6B;
+  --text-disabled: #4A4A4A;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-border-custom: var(--border);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-blue-light: var(--accent-blue-light);
+  --color-accent-green: var(--accent-green);
+  --color-accent-red: var(--accent-red);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-purple: var(--accent-purple);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
+    'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Scrollbar - thin styled */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in { animation: fadeIn 0.3s ease-out; }
+.animate-slide-up { animation: slideUp 0.35s cubic-bezier(0.22,1,0.36,1); }
+.animate-slide-in { animation: slideIn 0.3s cubic-bezier(0.22,1,0.36,1); }
+.animate-scale-in { animation: scaleIn 0.3s cubic-bezier(0.22,1,0.36,1); }
+.animate-count-up { animation: countUp 0.4s cubic-bezier(0.22,1,0.36,1) both; }
+
+/* Stagger */
+.stagger-1 { animation-delay: 0.04s; }
+.stagger-2 { animation-delay: 0.08s; }
+.stagger-3 { animation-delay: 0.12s; }
+.stagger-4 { animation-delay: 0.16s; }
+.stagger-5 { animation-delay: 0.2s; }
+
+/* ===== Toss-style Components ===== */
+
+/* Clean card - no border, bg difference */
+.toss-card {
+  background: var(--bg-primary);
+  border-radius: 24px;
+  transition: background-color 0.2s ease;
+}
+
+/* Card on bg-primary needs elevation */
+.toss-card-elevated {
+  background: var(--bg-elevated);
+  border-radius: 24px;
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Section card on colored bg */
+.toss-section {
+  background: var(--bg-primary);
+  border-radius: 28px;
+  padding: 28px;
+}
+
+/* Clean input */
+.toss-input {
+  background: var(--bg-secondary);
+  border: none;
+  border-radius: 18px;
+  font-size: 18px;
+  color: var(--text-primary);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toss-input::placeholder { color: var(--text-muted); }
+
+.toss-input:focus {
+  outline: none;
+  background: var(--bg-primary);
+  box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+/* Divider */
+.toss-divider {
+  height: 12px;
+  background: var(--bg-secondary);
+  margin: 0 -24px;
+}
+
+/* Section divider - thin line */
+.toss-line {
+  height: 1px;
+  background: var(--border);
+}
+
+/* Nav active dot */
+.nav-active-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  margin-top: 2px;
+}
